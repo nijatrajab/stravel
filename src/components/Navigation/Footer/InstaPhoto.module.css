@@ -1,0 +1,73 @@
+.instagram-card-img {
+    height: 10vw;
+    width: 10vw;
+}
+
+.instagram-card-img img {
+    height: 10vw;
+    width: 10vw;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .instagram-card-img {
+        height: calc(100vw / 2);
+        width: calc(100vw / 2);
+    }
+    
+    .instagram-card-img img {
+        height: calc(100vw / 2);
+        width: calc(100vw / 2);
+        object-fit: cover;
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .instagram-card-img {
+        height: calc(100vw / 4);
+        width: calc(100vw / 4);
+    }
+    
+    .instagram-card-img img {
+        height: calc(100vw / 4);
+        width: calc(100vw / 4);
+        object-fit: cover;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .instagram-card-img {
+        height: calc(100vw / 6);
+        width: calc(100vw / 6);
+    }
+    
+    .instagram-card-img img {
+        height: calc(100vw / 6);
+        width: calc(100vw / 6);
+        object-fit: cover;
+    }
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .instagram-card-img {
+        height: calc(100vw / 8);
+        width: calc(100vw / 8);
+    }
+    
+    .instagram-card-img img {
+        height: calc(100vw / 8);
+        width: calc(100vw / 8);
+        object-fit: cover;
+    }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .instagram-card-img {
+        height: calc(100vw / 8);
+        width: calc(100vw / 8);
+    }
+    
+    .instagram-card-img img {
+        height: calc(100vw / 8);
+        width: calc(100vw / 8);
+        object-fit: cover;
+    }
+  }

@@ -1,0 +1,6 @@
+.content-section {
+    display: flex;
+    flex-direction: column;
+    margin-block: 6rem;
+  }
+  

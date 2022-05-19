@@ -1,0 +1,47 @@
+.styled-btn {
+    color: var(--main-beige);
+    padding: 17.5px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--main-beige-black);
+    font: inherit;
+    margin-bottom: 1rem;
+    transition: all 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.styled-btn:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: var(--main-orange);
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .styled-btn {
+      padding: 5px;
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .styled-btn {
+        padding: 7px;
+      }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .styled-btn {
+        padding: 7px;
+      }
+  }
+  
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .styled-btn {
+        padding: 7px;
+      }
+  }
+  
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .styled-btn {
+        padding: 7px;
+      }
+  }

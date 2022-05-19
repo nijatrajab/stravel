@@ -1,0 +1,255 @@
+.head-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  flex-direction: column;
+}
+
+.head-text {
+  margin-inline: 0;
+  margin-block: 1rem 0;
+  font-size: 7rem;
+  z-index: 1;
+}
+
+.desc-text {
+  font-size: 1.5rem;
+  color: rgb(161, 161, 161);
+  margin: 0;
+  z-index: 1;
+}
+
+.buttons {
+  margin-block: 3rem;
+  z-index: 1;
+}
+
+.btns {
+  padding: 17.5px 20px;
+  margin-inline: 1rem;
+  font-size: 1rem;
+  background-color: var(--main-black);
+  color: var(--main-white);
+  transition: all 300ms;
+}
+
+.btns:hover {
+  background-color: var(--main-orange);
+}
+
+.places {
+  position: absolute;
+  width: 300px;
+  filter: grayscale(100%) sepia(1);
+}
+
+.places-0 {
+  top: 60%;
+  right: 65%;
+}
+.places-1 {
+  top: 0%;
+  right: 20%;
+  scale: 0.7;
+}
+.places-2 {
+  top: 10%;
+  right: 80%;
+}
+.places-3 {
+  top: 40%;
+  right: 5%;
+}
+.places-4 {
+  top: 10%;
+  right: 0%;
+}
+.places-5 {
+  top: 80%;
+  right: 5%;
+}
+.places-6 {
+  top: 10%;
+  right: 45%;
+}
+.places-7 {
+  top: 45%;
+  right: 80%;
+}
+.places-8 {
+  top: 80%;
+  right: 35%;
+}
+
+.bitem-0 {
+  top: 65%;
+  right: 78%;
+}
+.bitem-1 {
+  top: 0%;
+  right: 25%;
+}
+.bitem-2 {
+  top: 20%;
+  right: 63%;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .head-text {
+    font-size: 4rem;
+  }
+  
+  .desc-text {
+    font-size: 1rem;
+  }
+  
+  .buttons {
+    margin-block: 1.5rem;
+  }
+  
+  .btns {
+    padding: 10px 13.5px;
+  }
+
+  .places {
+    width: 80px;
+  }
+
+  .places-0 {
+    top: 60%;
+    right: 65%;
+  }
+  .places-1 {
+    top: 20%;
+    right: 20%;
+    scale: 0.7;
+  }
+  .places-2 {
+    top: 10%;
+    right: 70%;
+  }
+  .places-3 {
+    top: 58%;
+    right: 12%;
+  }
+  .places-4 {
+    top: 10%;
+    right: 7%;
+  }
+  .places-5 {
+    top: 80%;
+    right: 18%;
+  }
+  .places-6 {
+    top: 32%;
+    right: 67%;
+  }
+  .places-7 {
+    top: 80%;
+    right: 68%;
+  }
+  .places-8 {
+    top: 69%;
+    right: 35%;
+  }
+  .bitem-0 {
+    top: 61%;
+    right: 39%;
+  }
+  .bitem-1 {
+    top: 14%;
+    right: 33%;
+  }
+  .bitem-2 {
+    top: 28%;
+    right: 42%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .head-text {
+    font-size: 5rem;
+  }
+  
+  .desc-text {
+    font-size: 1.1rem;
+  }
+  
+  .buttons {
+    margin-block: 1.8rem;
+  }
+  
+  .btns {
+    padding: 12px 15.5px;
+  }
+
+  .places {
+    width: 120px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .head-text {
+    font-size: 6rem;
+  }
+  
+  .desc-text {
+    font-size: 1.3rem;
+  }
+  
+  .buttons {
+    margin-block: 2.1rem;
+  }
+  
+  .btns {
+    padding: 14px 17.5px;
+  }
+
+  .places {
+    width: 160px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .head-text {
+    font-size: 7rem;
+  }
+  
+  .desc-text {
+    font-size: 1.4rem;
+  }
+  
+  .buttons {
+    margin-block: 2.4rem;
+  }
+  
+  .btns {
+    padding: 16px 19.5px;
+  }
+
+  .places {
+    width: 220px;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .places {
+    width: 250px;
+  }
+  .desc-text {
+    font-size: 1.5rem;
+  }
+  
+  .buttons {
+    margin-block: 2.7rem;
+  }
+  
+  .btns {
+    padding: 17.5px 20px;
+  }
+
+  .places {
+    width: 250px;
+  }
+}

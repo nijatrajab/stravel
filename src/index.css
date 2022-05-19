@@ -1,0 +1,205 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: auto;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: url("./assets/fonts/Work_Sans/static/WorkSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WorkSans-light";
+  src: url("./assets/fonts/Work_Sans/static/WorkSans-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Updock";
+  src: url("./assets/fonts/Updock-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Truclenta";
+  src: url("./assets/fonts/Truculenta/Truculenta-Thin.ttf");
+  font-weight: thin;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Truclenta";
+  src: url("./assets/fonts/Truculenta/Truculenta-Light.ttf");
+  font-weight: light;
+  font-style: normal;
+}
+
+body {
+  font-family: "WorkSans", "Quicksand", "Updock";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+img {
+  filter: grayscale(30%) sepia(0.3);
+}
+
+.slick-slider {
+  overflow: hidden;
+  cursor: pointer;
+  height: auto;
+}
+
+.slick-dots {
+  bottom: 20px !important;
+}
+
+div {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* * {
+  outline: 1px solid #f00 !important;
+} */
+
+
+.slick-track {
+  margin: auto !important;
+}
+
+::-moz-selection {
+  color: var(--main-white);
+  background: var(--main-orange);
+}
+
+::selection {
+  color: var(--main-white);
+  background: var(--main-orange);
+}
+
+:focus {
+  outline: 0;
+}
+
+:root {
+  /* main colors */
+  --main-black: rgb(0, 0, 0);
+  --main-beige-black: rgb(31, 30, 30);
+  --main-light-black: rgb(122, 122, 122);
+  --main-white: rgb(255, 255, 255);
+  --main-beige: rgb(245, 245, 220);
+  --main-dark-beige: rgb(235, 235, 195);
+  --main-orange: rgb(187, 146, 48);
+
+  --main-bg-color: rgba(243, 245, 246, 1);
+  --main-dark-blue: rgba(20, 34, 46, 1);
+  --main-blue: rgb(66, 91, 112);
+  --main-light-blue: rgb(174, 189, 199);
+  --main-white: rgb(255, 255, 255);
+
+  --main-light-orange: rgb(253, 130, 108);
+  --main-grey: rgb(158, 158, 158);
+
+  /* main fonts */
+  --main-font: "WorkSans";
+  --main-light-font: "WorkSans-light";
+  --main-design-font: "Truclenta";
+}

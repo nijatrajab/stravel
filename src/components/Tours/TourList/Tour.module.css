@@ -1,0 +1,86 @@
+.tour-card {
+  overflow: hidden;
+  width: inherit;
+  height: 500px;
+  position: relative;
+  font-family: var(--main-light-font);
+}
+
+.tour-card img {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+
+.card-class {
+  height: inherit;
+  width: inherit;
+}
+
+/* 
+  margin-top: 88%; 
+    background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    80%,
+    rgba(0, 0, 0, 0)
+  );
+  */
+
+.content-holder {
+  position: absolute;
+  overflow: hidden;
+  margin-inline: auto;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    90%,
+    rgba(0, 0, 0, 0)
+  );
+  /* margin-top: 0%; 
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    80%,
+    rgba(0, 0, 0, 0.9)); */
+  top: 260px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 240px;
+  color: #fff;
+  display: block;
+  max-width: auto;
+}
+
+
+
+
+
+
+
+.content-discount {
+  width: 50px;
+  height: 71px;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  background-color: var(--main-orange);
+  position: absolute;
+  overflow: hidden;
+  margin-inline: auto;
+  margin-top: 0%;
+  margin-right: 3%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-discount svg{
+  width: 24px;
+  height: 24px;
+  color: var(--main-dark-blue);
+}

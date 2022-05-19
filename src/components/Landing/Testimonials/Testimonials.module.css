@@ -1,0 +1,8 @@
+.testimonials {
+    height: 450px;
+    background-color: var(--main-beige-black);
+    background-image: url("../../../assets/images/testimonial/testimonial-3.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

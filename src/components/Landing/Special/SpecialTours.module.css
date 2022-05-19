@@ -1,0 +1,50 @@
+/* Content Slider card */
+.slider5nav {
+  width: auto;
+}
+
+.content-card-hold {
+  height: 490px;
+  cursor: default;
+  padding-inline: 5%;
+}
+
+/* Card button&dots */
+.content-card-prev-btn,
+.content-card-next-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 40px;
+  bottom: 50%;
+}
+
+.content-card-prev-btn,
+.content-card-next-btn  {
+  color: var(--main-beige);
+  background-color: var(--main-beige-black);
+  transition: background-color 300ms;
+}
+
+.content-card-prev-btn {
+  left: 0%;
+}
+
+.content-card-next-btn {
+  right: 0%;
+}
+
+.content-card-prev-btn:hover {
+  background-color: var(--main-orange);
+}
+
+.content-card-next-btn:hover {
+  background-color: var(--main-orange);
+}
+
+.content-card-prev-btn:active,
+.content-card-next-btn:active {
+  transform: scale(0.97);
+}

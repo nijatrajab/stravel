@@ -1,0 +1,83 @@
+.about-holder {
+  width: 100%;
+  max-height: 500px;
+  position: relative;
+  color: (--main-beige-black);
+  clip-path: polygon(1% 30%, 4% 10%, 98% 1%, 100% 80%, 95% 98%, 0% 100%, 1% 30%);
+  transition: all 300ms;
+}
+
+.about-holder:hover {
+  clip-path: polygon(2% 1%, 80% 10%, 99% 1%, 95% 100%, 10% 98%, 2% 80%, 2% 20%)
+}
+
+.about-holder img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 500px;
+}
+
+.card-class {
+  height: inherit;
+  width: inherit;
+}
+
+.content-holder {
+  position: absolute;
+  overflow: hidden;
+  margin-inline: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 100%;
+  padding-inline: 50px;
+  color: (--main-beige-black);
+}
+
+.about-desc {
+  font-size: 1.5rem;
+  font-family: var(--main-design-font);
+  color: (--main-beige-black);
+  text-align: justify;
+  text-align-last: center;
+  margin-bottom: 20px;
+}
+
+.sign-desc {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .about-desc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .about-desc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .about-desc {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .about-desc {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+
+}

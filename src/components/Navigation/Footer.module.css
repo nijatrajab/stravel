@@ -1,0 +1,110 @@
+.footer {
+  height: 7rem;
+  background-color: var(--main-beige-black);
+  color: var(--main-white);
+}
+
+.footer-outer {
+  margin: auto 14%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: inherit;
+}
+
+.footer-logo p {
+  font-size: 4rem;
+  font-family: "WorkSans";
+}
+
+.footer-line {
+  font-size: 4rem;
+  margin: 0 30px;
+}
+
+.footer-map {
+  display: flex;
+  justify-content: left;
+  margin-block: 10px;
+}
+
+.footer-map p {
+  margin-inline: 10px
+}
+
+.footer-footnote {
+  font-family: var(--main-light-font);
+  display: flex;
+  justify-content: left;
+  background-color: var(--main-beige-black);
+  color: var(--main-beige);
+  padding-block: 10px
+}
+
+.footer-base {
+  display: flex;
+  align-items: center;
+}
+
+.support p {
+  font-size: var(--main-light-font);
+}
+
+
+
+
+
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  margin-block: 10px;
+}
+
+.social-icons {
+  font-size: 20px;
+  color: var(--main-beige);
+  margin-inline: 10px
+}
+
+.footer-about p,
+.footer-map p,
+.social-icons {
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.footer-about p:hover,
+.footer-map p:hover,
+.social-icons:hover {
+  color: var(--main-orange);
+}
+
+.footer-inner {
+  height: 7rem;
+  background-color: var(--main-dark-blue);
+}
+
+.footer-related-text {
+  margin: auto 14%;
+  padding: 20px;
+  text-align: center;
+  color: var(--main-white);
+}
+
+.footer-related-logos {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 35%;
+}
+
+.partner-logo {
+  max-height: 30px;
+}
+
+.partner-logo-img {
+  height: 30px;
+  object-fit: cover;
+}

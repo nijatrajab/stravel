@@ -1,0 +1,9 @@
+.detail-star,
+.detail-description,
+.detail-special {
+  margin: 20px 15px 0 15px;
+}
+
+.detail-special {
+    color: var(--main-light-orange);
+  }

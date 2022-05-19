@@ -1,0 +1,28 @@
+.slider-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.slider-range {
+  color: var(--main-beige-black);
+}
+
+.slider-range :global .MuiSlider-thumb {
+  border-radius: 0px;
+  width: 15px;
+  height: 15px;
+}
+
+.slider-range :global .MuiSlider-thumb:hover {
+  box-shadow: 0px 0px 20px 5px rgba(187, 146, 48, 0.56);
+}
+
+.slider-range :global .MuiSlider-thumb.Mui-active {
+  color: rgba(187, 146, 48, 0.56);
+}
+
+.slider-range :global .MuiSlider-thumb .MuiSlider-valueLabel {
+  background-color: var(--main-orange);
+}
+

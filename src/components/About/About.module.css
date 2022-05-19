@@ -1,0 +1,120 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 33.3vh;
+  width: auto;
+  margin: 0 auto;
+}
+
+.spacer {
+  height: 100vh;
+}
+
+.parallax {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  max-height: 650px;
+  grid-column: 1 / -1;
+}
+
+.parallax:nth-child(1) div:nth-child(1),
+.overlay,
+.parallax:nth-child(5) div:nth-child(1),
+.overlay {
+  position: absolute;
+  background-color: var(--main-dark-blue);
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  bottom: 0;
+}
+
+.parallax:nth-child(1) {
+  grid-row: 1;
+  height: 95vh;
+}
+
+.parallax:nth-child(5) {
+  grid-row: 5;
+  height: 95vh;
+}
+
+.parallax:nth-child(1) div:nth-child(2) {
+  width: 1000px;
+  height: 300px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.parallax:nth-child(5) div:nth-child(2) {
+
+}
+
+/* .parallax {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  max-height: 650px;
+  grid-column: 1 / -1;
+}
+
+.parallax:nth-child(1) div:nth-child(1),
+.overlay,
+.parallax:nth-child(5) div:nth-child(1),
+.overlay {
+  position: absolute;
+  background-color: var(--main-dark-blue);
+  width: 100%;
+  height: 160%;
+  object-fit: cover;
+  bottom: 0;
+}
+
+.parallax:nth-child(1) {
+  grid-row: 1;
+  height: 95vh;
+}
+
+.parallax:nth-child(5) {
+  grid-row: 5;
+  height: 95vh;
+}
+
+.parallax:nth-child(1) div:nth-child(2) {
+  inset-inline: -550px !important;
+}
+
+.parallax:nth-child(5) div:nth-child(2) {
+  inset-inline: -600px !important;
+} */
+
+
+.parallax:nth-child(2) {
+  grid-row: 2;
+  height: 45vh;
+}
+.parallax:nth-child(3) {
+  grid-row: 3;
+  height: 45vh;
+}
+
+.parallax:nth-child(4) {
+  grid-row: 4;
+  height: 75vh;
+  width: auto;
+  margin: auto 14%;
+}
+
+.parallax:nth-child(4) h1 {
+  text-align: center;
+  font-size: 60px;
+  color: var(--main-dark-blue);
+  margin: 50px;
+}
+
+

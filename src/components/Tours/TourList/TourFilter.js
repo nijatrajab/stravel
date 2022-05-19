@@ -1,0 +1,104 @@
+import PriceFilter from "./Filter/PriceFilter";
+import TitleFilter from "./Filter/TitleFilter";
+import DaysFilter from "./Filter/DaysFilter";
+import DiscountFilter from "./Filter/DiscountFilter";
+import SpecialFilter from "./Filter/SpecialFilter";
+import TypeFilter from "./Filter/TypeFilter";
+
+import { motion } from "framer-motion";
+import classes from "./TourFilter.module.css";
+import { VscChromeClose } from "react-icons/vsc";
+import StyledBtn from "../../Utils/StyledBtn";
+
+const filtersVariants = {
+  exit: {
+    opacity: 0,
+    flexBasis: "0%",
+    width: "0px",
+    marginLeft: "0rem",
+    transition: {
+      duration: 0.3,
+      type: "easeIn",
+    },
+  },
+  hidden: {
+    opacity: 0,
+    flexBasis: "0%",
+    width: "0px",
+    marginLeft: "0rem",
+    transition: {
+      duration: 0.3,
+      type: "easeIn",
+    },
+  },
+  visible: {
+    flexBasis: "24%",
+    opacity: 1,
+    width: "340px",
+    marginLeft: "3rem",
+    transition: {
+      duration: 0.3,
+      delay: 0.1,
+      type: "easeOut",
+    },
+  },
+};
+
+const TourFilter = ({ children, mediaQuery, onClose }) => {
+  const filterComp = (
+    <>
+      <div className={classes["filter-buttons"]}>
+        {!mediaQuery ? (
+          ""
+        ) : (
+          <StyledBtn onEvent={onClose}>
+            <VscChromeClose />
+          </StyledBtn>
+        )}
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY TITLE</p>
+        <TitleFilter />
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY PRICE</p>
+        <PriceFilter />
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY DAYS</p>
+        <DaysFilter />
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY DISCOUNT</p>
+        <DiscountFilter />
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY SPECIAL</p>
+        <SpecialFilter />
+      </div>
+      <div className={classes["filter"]}>
+        <p>FILTER BY TYPE</p>
+        <TypeFilter />
+      </div>
+    </>
+  );
+
+  const filterHolder = !mediaQuery ? (
+    <motion.div
+      layout
+      key="TourFilterInside"
+      variants={filtersVariants}
+      exit="exit"
+      initial="hidden"
+      animate="visible"
+      className={classes["filters"]}
+    >
+      {filterComp}
+    </motion.div>
+  ) : (
+    <div className={classes["filters"]}>{filterComp}</div>
+  );
+
+  return filterHolder;
+};
+export default TourFilter;

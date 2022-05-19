@@ -1,0 +1,10 @@
+.header-hamburger {
+
+}
+
+.nav-hamburger {
+    font-size: 1.3rem;
+    color: var(--main-beige-black);
+    margin-block: 3rem;
+    text-align: center;
+}

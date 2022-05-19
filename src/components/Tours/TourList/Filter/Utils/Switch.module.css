@@ -1,0 +1,106 @@
+.switch {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.switch-text {
+  font-size: 16px !important;
+  margin-inline: 0;
+  padding-inline: 0;
+  margin-block: auto;
+  color: var(--main-light-black);
+}
+
+.switch-text[data-switch="true"] {
+  color: var(--main-beige-black);
+}
+
+.switch-input {
+  margin-inline: 0;
+  padding-inline: 0;
+  overflow: visible;
+}
+
+.switch-input :global .MuiSwitch-thumb {
+  background-color: var(--main-light-black);
+  border-radius: 0;
+  width: 15px;
+  height: 15px;
+  transform: translateY(2px);
+}
+
+.switch-input:hover :global .MuiSwitch-switchBase {
+  background-color: transparent;
+}
+
+.switch-input :global .MuiSwitch-switchBase .MuiTouchRipple-root {
+    display: none;
+  }
+
+.switch-input:hover :global .MuiSwitch-thumb {
+  box-shadow: 0px 0px 5px 5px rgba(122, 122, 122, 0.56);
+}
+
+.switch-input :global .MuiSwitch-thumb {
+  transform: translate(-14px, 3px);
+  transition: all 300ms;
+}
+.switch-input :global .Mui-checked .MuiSwitch-thumb {
+    transform: translate(22px, 3px);
+  background-color: var(--main-beige-black);
+  transition: all 300ms;
+}
+
+.switch-input:hover :global .Mui-checked .MuiSwitch-thumb {
+  box-shadow: 0px 0px 5px 5px rgba(31, 30, 30, 0.56);
+}
+
+.switch-input :global .MuiSwitch-track {
+  background-color: var(--main-light-black);
+  opacity: 1;
+  border-radius: 0;
+  height: 5px;
+  width: 57px;
+  margin-inline: 0;
+}
+
+.switch-input :global .Mui-checked + .MuiSwitch-track {
+  background-color: var(--main-beige-black);
+  opacity: 1;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .switch-text {
+    font-size: 0.9rem !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .switch-text {
+    font-size: 0.9rem !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .switch-text {
+    font-size: 0.9rem !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .switch-text {
+    font-size: 1rem !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .switch-text {
+    font-size: 1rem !important;
+    margin-right: 10px;
+  }
+}

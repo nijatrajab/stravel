@@ -1,0 +1,34 @@
+.slider3nav {
+  position: absolute !important;
+  bottom: 320px;
+  width: inherit;
+  padding-right: 60%;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .slider3nav {
+    padding-right: 0%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .slider3nav {
+    padding-right: 0%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .slider3nav {
+    padding-right: 0%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .slider3nav {
+    padding-right: 45%;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .slider3nav {
+    padding-right: 50%;
+  }
+}

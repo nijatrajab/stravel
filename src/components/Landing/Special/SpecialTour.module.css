@@ -1,0 +1,124 @@
+.content-card {
+  transition: transform 300ms;
+  cursor: pointer;
+  height: inherit;
+}
+
+.content-card:hover .content-card-img img {
+  transform: scale(1.05);
+}
+
+.content-card:hover .content-card-detail {
+  height: 150px;
+  margin-top: -50px;
+}
+
+.content-card:hover .content-card-price {
+  top: 40px;
+}
+.content-card:hover .content-card-title {
+  top: 70px;
+}
+.content-card:hover .content-card-days {
+  top: 115px;
+}
+
+.content-card-detail {
+  height: 100px;
+  top: -10%;
+  background-image: linear-gradient( to top, var(--main-dark-beige), 90%, rgba(255, 255, 255, 0) );
+  position: relative;
+  overflow: hidden;
+  transition: margin 300ms, height 300ms;
+}
+
+.content-card-img {
+  object-fit: cover;
+}
+
+.content-card-img img {
+  height: 440px;
+  object-fit: cover;
+  width: -webkit-fill-available;
+  transition: all 300ms
+}
+
+.content-card-price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--main-beige-black);
+  position: absolute;
+  top: -20px;
+  padding-inline: 20px;
+  transition: top 300ms;
+}
+
+.content-card-price-title {
+  margin-left: 0;
+}
+
+.content-card-price-tag {
+  margin-right: 0;
+  display: flex;
+}
+
+.content-card-title {
+  position: absolute;
+  font-size: 2rem;
+  top: 40px;
+  padding-inline: 20px;
+  transition: top 300ms;
+}
+
+.content-card-days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: var(--main-beige-black);
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  padding-inline: 20px;
+  transition: top 300ms;
+}
+
+.content-card-days p:nth-child(1) {
+  margin: 0;
+  padding: 0
+}
+
+.content-card-days p:nth-child(2) {
+  margin: 0;
+  padding: 0
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .content-card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .content-card-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .content-card-title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .content-card-title {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .content-card-title {
+    font-size: 1.9rem;
+  }
+}

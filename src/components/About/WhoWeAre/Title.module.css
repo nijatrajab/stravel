@@ -1,0 +1,32 @@
+.about-title {
+    font-size: 10rem;
+    font-family: var(--main-design-font);
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .about-title {
+      font-size: 4rem;
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .about-title {
+        font-size: 5rem;
+      }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .about-title {
+        font-size: 6rem;
+      }
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .about-title {
+        font-size: 7rem;
+      }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .about-title {
+        font-size: 9rem;
+      }
+  }
