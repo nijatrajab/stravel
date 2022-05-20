@@ -52,6 +52,8 @@ const HeaderSlide = () => {
       <BackgroundSlide ref={sliderRef1} data={filteredTours} />
 
       <Content contentClass={classes["content-slider"]}>
+        <TitleSlide ref={sliderRef3} data={filteredTours} />
+        <DescriptionSlide ref={sliderRef4} data={filteredTours} />
         {!mobileTabletDevice && (
           <CardSlide
             setNav={setNav}
@@ -60,8 +62,6 @@ const HeaderSlide = () => {
             data={filteredTours}
           />
         )}
-        <TitleSlide ref={sliderRef3} data={filteredTours} />
-        <DescriptionSlide ref={sliderRef4} data={filteredTours} />
       </Content>
     </Fragment>
   );

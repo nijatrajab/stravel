@@ -75,14 +75,6 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
           >
             Advanced filter
           </StyledBtn>
-          {/* <Button
-            buttonClass={`${classes["advanced-filter"]} ${
-              filterState ? classes["advanced-filter-active"] : ""
-            }`}
-            onClick={() => filterStateFn((prevState) => !prevState)}
-          >
-            Advanced filter
-          </Button> */}
         </div>
       </motion.div>
       <motion.div

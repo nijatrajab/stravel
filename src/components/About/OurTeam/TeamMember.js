@@ -55,7 +55,7 @@ const TeamMember = ({
       <div className={classes["team-card-image"]}>
           {isLoading && <p>isloading</p>}
           {hasError && <p>{hasError}</p>}
-        {(!isLoading && !hasError) && <img src={teamImage} alt={name} />}
+        {(!isLoading && !hasError) && <img src={image} alt={name} />}
       </div>
       <div className={classes["team-card-pos"]}>
         <p className={classes["position"]}>{position}</p>

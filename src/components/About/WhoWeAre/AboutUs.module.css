@@ -12,9 +12,9 @@
   transition: all 300ms;
 }
 
-.about-top:hover .about-holder {
+/* .about-top:hover .about-holder {
   clip-path: polygon(2% 1%, 80% 10%, 99% 1%, 95% 100%, 10% 98%, 2% 80%, 2% 20%)
-}
+} */
 
 .about-holder img {
   object-fit: cover;

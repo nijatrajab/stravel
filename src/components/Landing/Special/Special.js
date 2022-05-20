@@ -1,12 +1,14 @@
 
+import HeadingText from "../../Utils/HeadingText"
 import SpecialTours from "./SpeacialTours"
-import SpecialText from "./SpecialText"
 
 
 const Special = () => {
     return (
         <>
-        <SpecialText />
+        <HeadingText 
+        title="TODAY'S SPECIAL!" 
+        desc="Lorem ipsum dolor sit amet, his convenire similique efficiendi et." />
         <SpecialTours/>
         </>
     )

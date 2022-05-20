@@ -67,7 +67,7 @@
 
   .tourlist-btns {
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
 
@@ -93,8 +93,7 @@
   }
 
   .tourlist-btns {
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 

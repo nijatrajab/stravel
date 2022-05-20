@@ -10,24 +10,19 @@ a {
 .social-icons:hover {
   color: var(--main-orange);
 }
-.team-card:hover .team-card-pos {
-  height: 29px;
-}
-.team-card:hover .team-card-detail {
-  height: 171px;
-}
 
 .team-card-image {
   /* margin-bottom: 1.5rem; */
   width: 100%;
   height: 200px;
   font-family: var(--main-light-font);
+  transition: all 300ms;
 }
 
 .team-card-image img {
   object-fit: cover;
   width: 100%;
-  height: 200px;
+  height: inherit;
 }
 
 .team-card-pos {
@@ -84,4 +79,19 @@ a {
   justify-content: space-evenly;
   width: 100%;
   text-align: center;
+}
+
+.team-card:hover .team-card-pos,
+.team-card:active .team-card-pos {
+  height: 30px;
+}
+
+.team-card:hover .team-card-detail,
+.team-card:active .team-card-detail  {
+  height: 185px;
+}
+
+.team-card:hover .team-card-image,
+.team-card:active .team-card-image {
+  height: 185px;
 }

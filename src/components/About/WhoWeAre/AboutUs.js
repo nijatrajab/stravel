@@ -5,6 +5,22 @@ import classes from "./AboutUs.module.css";
 import Sign from "./Sign";
 import Title from "./Title";
 
+const clipPathVariants = {
+  hidden: {
+    clipPath:
+      "polygon(2% 1%, 80% 10%, 99% 1%, 95% 100%, 10% 98%, 2% 80%, 2% 20%)",
+    transition: {
+      duration: 0.1,
+    },
+  },
+  visible: {
+    clipPath:
+      "polygon(1% 30%, 4% 10%, 98% 1%, 100% 80%, 95% 98%, 0% 100%, 1% 30%)",
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
 const imageVariants = {
   hidden: {
     filter: "sepia(0)",
@@ -17,6 +33,7 @@ const imageVariants = {
     },
   },
 };
+
 const bgVariants = {
   hidden: {
     backgroundColor: "rgba(245, 245, 220, 0)",
@@ -58,9 +75,8 @@ const descVariants = {
 const AboutUs = ({ children, aboutUs }) => {
   const [isHovered, setIsHovered] = useState(false);
   const mobileOrTablet = useMediaQuery("(max-width:768px)");
-  const isHoverControl = useAnimation();
 
-  console.log("This is mobile for who we are", mobileOrTablet)
+  console.log("This is mobile for who we are", mobileOrTablet);
 
   const mobileClickHandler = () => {
     if (mobileOrTablet) {
@@ -68,19 +84,37 @@ const AboutUs = ({ children, aboutUs }) => {
     }
   };
 
+  const notMobileClickHandlerIsHovered = () => {
+    if (!mobileOrTablet) {
+      setIsHovered(true);
+    }
+  };
+
+  const notMobileClickHandlerIsNotHovered = () => {
+    if (!mobileOrTablet) {
+      setIsHovered(false);
+    }
+  };
+
   return (
     <div
       className={classes["about-top"]}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={notMobileClickHandlerIsHovered}
+      onMouseLeave={notMobileClickHandlerIsNotHovered}
       onClick={mobileClickHandler}
     >
-      <motion.div className={classes["about-holder"]}>
+      <motion.div
+        className={classes["about-holder"]}
+        variants={clipPathVariants}
+        initial="hidden"
+        animate={!isHovered ? "hidden" : "visible"}
+      >
         <motion.img
           variants={imageVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-200px" }}
+          animate="visible"
+          // whileInView="visible"
+          // viewport={{ once: true, margin: "-200px" }}
           src={aboutUs.image}
           alt={aboutUs.title}
         />
@@ -104,7 +138,7 @@ const AboutUs = ({ children, aboutUs }) => {
                       key={`titleWord-${idx}-${Math.random().toString()}`}
                       title={titleWord}
                       index={idx}
-                      animate={!isHovered ? "visible" : "isHovered"}
+                      // animate={!isHovered ? "visible" : "isHovered"}
                     />
                   );
                 })}

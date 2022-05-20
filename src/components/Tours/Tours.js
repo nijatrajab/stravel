@@ -12,6 +12,7 @@ import Modal from "../../UI/Modal";
 
 import classes from "./Tours.module.css";
 import Content from "../../UI/Content";
+import HeadingText from "../Utils/HeadingText";
 
 const Tours = () => {
   const [filterActive, setFilterActive] = useState(false);
@@ -53,14 +54,19 @@ const Tours = () => {
       </div>
 
       <Content>
-        <ContentSection sectionClass={classes["tour-page"]}>
-          <TourList
+      
+        <ContentSection sectionClass={classes["tour-holder"]}>
+        <HeadingText title="OUR TOURS!" desc="Lorem ipsum dolor sit amet, his convenire similique efficiendi et."/>
+        <div className={classes["tour-page"]}>
+        <TourList
             key={`TourFilter1`}
             filterState={filterActive}
             filterStateFn={setFilterActive}
             isNotDesktop={notDesktopDevice}
           />
           <AnimatePresence>{filterComp}</AnimatePresence>
+        </div>
+
         </ContentSection>
       </Content>
     </TourProvider>

@@ -4,3 +4,7 @@
     flex-direction: row;
     background-color: var(--main-beige);
 }
+
+.tour-holder {
+    background-color: var(--main-beige);
+}

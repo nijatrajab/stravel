@@ -24,12 +24,12 @@ const titleWordVariants = {
   }
 };
 
-const Title = ({ children, title, index, animControl }) => {
+const Title = ({ children, title, index }) => {
   return (
     <motion.p
       variants={titleWordVariants}
       initial="hidden"
-      animate={animControl}
+      animate="visible"
       exit="exit"
       custom={index}
       className={classes["about-title"]}

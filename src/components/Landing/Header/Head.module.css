@@ -123,7 +123,7 @@
     right: 65%;
   }
   .places-1 {
-    top: 20%;
+    top: 15%;
     right: 20%;
     scale: 0.7;
   }
@@ -189,6 +189,55 @@
   .places {
     width: 120px;
   }
+
+  .places-0 {
+    top: 43%;
+    right: 78%;
+  }
+  .places-1 {
+    top: 30%;
+    right: 0%;
+  }
+  .places-2 {
+    top: 10%;
+    right: 70%;
+  }
+  .places-3 {
+    top: 72%;
+    right: 12%;
+  }
+  .places-4 {
+    top: 10%;
+    right: 7%;
+  }
+  .places-5 {
+    top: 85%;
+    right: 45%;
+  }
+  .places-6 {
+    top: 28%;
+    right: 45%;
+  }
+  .places-7 {
+    top: 68%;
+    right: 72%;
+  }
+  .places-8 {
+    top: 60%;
+    right: 45%;
+  }
+  .bitem-0 {
+    top: 26%;
+    right: 19%;
+  }
+  .bitem-1 {
+    top: 10%;
+    right: 33%;
+  }
+  .bitem-2 {
+    top: 28%;
+    right: 70%;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -211,6 +260,55 @@
   .places {
     width: 160px;
   }
+
+  .places-0 {
+    top: 43%;
+    right: 78%;
+  }
+  .places-1 {
+    top: 30%;
+    right: 0%;
+  }
+  .places-2 {
+    top: 10%;
+    right: 70%;
+  }
+  .places-3 {
+    top: 72%;
+    right: 12%;
+  }
+  .places-4 {
+    top: 10%;
+    right: 7%;
+  }
+  .places-5 {
+    top: 85%;
+    right: 45%;
+  }
+  .places-6 {
+    top: 28%;
+    right: 45%;
+  }
+  .places-7 {
+    top: 68%;
+    right: 72%;
+  }
+  .places-8 {
+    top: 60%;
+    right: 45%;
+  }
+  .bitem-0 {
+    top: 26%;
+    right: 19%;
+  }
+  .bitem-1 {
+    top: 10%;
+    right: 33%;
+  }
+  .bitem-2 {
+    top: 28%;
+    right: 70%;
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   .head-text {
@@ -231,6 +329,56 @@
 
   .places {
     width: 220px;
+  }
+
+  .places-0 {
+    top: 43%;
+    right: 78%;
+  }
+  .places-1 {
+    top: 25%;
+    right: 3%;
+    scale: 0.6;
+  }
+  .places-2 {
+    top: 8%;
+    right: 80%;
+  }
+  .places-3 {
+    top: 72%;
+    right: 12%;
+  }
+  .places-4 {
+    top: 5%;
+    right: 4%;
+  }
+  .places-5 {
+    top: 85%;
+    right: 45%;
+  }
+  .places-6 {
+    top: 20%;
+    right: 45%;
+  }
+  .places-7 {
+    top: 68%;
+    right: 72%;
+  }
+  .places-8 {
+    top: 60%;
+    right: 35%;
+  }
+  .bitem-0 {
+    top: 15%;
+    right: 19%;
+  }
+  .bitem-1 {
+    top: 5%;
+    right: 53%;
+  }
+  .bitem-2 {
+    top: 28%;
+    right: 70%;
   }
 }
 @media screen and (min-width: 1201px) and (max-width: 1600px) {

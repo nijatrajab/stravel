@@ -3,6 +3,7 @@
   width: auto;
   object-fit: cover;
   filter: brightness(0.3);
+  cursor: default
 }
 
 .imgHead {

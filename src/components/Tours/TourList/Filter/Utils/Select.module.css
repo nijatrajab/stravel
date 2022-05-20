@@ -1,92 +1,104 @@
 .form-control {
-    width: 100%;
-    flex: 1;
+  width: 100%;
+  flex: 1;
 }
 
 .select-control :global {
-    width: 160px;
-    border-radius: 0 !important;
-    margin-right: 2rem;
+  width: 160px;
+  border-radius: 0 !important;
+  margin-right: 2rem;
 }
 
 .select-control :global .MuiSelect-select:hover {
-    background-color: var(--main-orange);
+  background-color: var(--main-orange);
 }
 
 .select-control :global .MuiSelect-select {
-    border-radius: 0;
-    background-color: var(--main-beige-black);
-    color: var(--main-beige) !important;
-    transition: all 300ms;
+  border-radius: 0;
+  background-color: var(--main-beige-black);
+  color: var(--main-beige) !important;
+  transition: all 300ms;
 }
 
 .select-control :global .MuiSelect-select[aria-expanded="true"] {
-    background-color: var(--main-orange);
-    color: var(--main-beige) !important;
+  background-color: var(--main-orange);
+  color: var(--main-beige) !important;
 }
 
 :global .MuiPaper-elevation {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 :global .MuiMenuItem-root.Mui-selected {
-    background-color: var(--main-beige-black) !important;
-    color: var(--main-beige) !important;
+  background-color: var(--main-beige-black) !important;
+  color: var(--main-beige) !important;
 }
 
 :global .MuiMenuItem-root:hover {
-    background-color: var(--main-beige-black) !important;
-    color: var(--main-beige) !important;
+  background-color: var(--main-beige-black) !important;
+  color: var(--main-beige) !important;
+}
+
+:global .MuiPaper-elevation {
+  background-color: var(--main-beige) !important;
+}
+
+.select-control :global .MuiSelect-icon {
+  color: var(--main-beige);
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
-    .select-control :global .MuiSelect-select {
-      padding-top: 4px;
-      padding-bottom: 0px;
-      padding-inline: 5px;
-      font-size: 0.8rem !important;
-    }
-    .select-control :global .MuiSelect-icon {
-        color: var(--main-beige);
-    }
+  .select-control :global .MuiSelect-select {
+    padding-top: 4px;
+    padding-bottom: 1px;
+    padding-inline: 5px;
+    font-size: 0.8rem !important;
+  }
+  .select-control :global .MuiSelect-icon {
+    color: var(--main-beige);
+  }
 
-    :global .MuiMenuItem-root {
-        padding-top: 3px;
-        padding-bottom: 1px;
-        padding-inline: 5px;
-        font-size: 0.8rem !important;
-        min-height: 30px !important;
-    }
+  :global .MuiMenuItem-root {
+    padding-top: 3px;
+    padding-bottom: 1px;
+    padding-inline: 5px;
+    font-size: 0.8rem !important;
+    min-height: 30px !important;
   }
-  
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    .select-control :global .MuiSelect-select {
-        padding-top: 6px;
-        padding-bottom: 4px;
-        padding-inline: 5px;
-        font-size: 0.9rem !important;
-      }
-      .select-control :global .MuiSelect-icon {
-          color: var(--main-beige);
-      }
-  
-      :global .MuiMenuItem-root {
-          padding-top: 3px;
-          padding-bottom: 1px;
-          padding-inline: 5px;
-          font-size: 0.9rem !important;
-          min-height: 36px !important;
-      }
-  }
-  
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
 
+  :global .MuiPaper-elevation {
+    background-color: var(--main-beige) !important;
+    left: 10px !important;
   }
-  
-  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+}
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .select-control :global .MuiSelect-select {
+    padding-top: 7px;
+    padding-bottom: 6px;
+    padding-inline: 5px;
+    font-size: 0.9rem !important;
   }
-  
-  @media screen and (min-width: 1201px) and (max-width: 1600px) {
 
+  :global .MuiMenuItem-root {
+    padding-top: 3px;
+    padding-bottom: 1px;
+    padding-inline: 5px;
+    font-size: 0.9rem !important;
+    min-height: 36px !important;
   }
+
+  .form-control {
+    width: auto;
+    flex: auto;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+}
