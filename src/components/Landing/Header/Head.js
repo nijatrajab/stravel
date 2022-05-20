@@ -1,5 +1,6 @@
 import Button from "../../../UI/Button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { bestItems, bestPlaces } from "../../../store/constant-images";
 import classes from "./Head.module.css";
@@ -125,8 +126,8 @@ const Head = () => {
         custom="4"
         className={classes["buttons"]}
       >
-        <Button buttonClass={classes["btns"]}>TOURS</Button>
-        <Button buttonClass={classes["btns"]}>ABOUT US</Button>
+        <Link to="/tours"><Button buttonClass={classes["btns"]}>TOURS</Button></Link> 
+        <Link to="/about"><Button buttonClass={classes["btns"]}>ABOUT US</Button></Link>
       </motion.div>
       <div className={classes["scroll"]}></div>
       {bestItems.map((item, idx) => (

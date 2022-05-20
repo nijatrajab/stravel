@@ -13,7 +13,7 @@ const Blogs = () => {
   const notDesktopDevice = useMediaQuery(
     "(min-width:0px) and (max-width:1200px)"
   );
-  console.log(notDesktopDevice, "mobile device");
+
   const filterBlog = useCallback((blogId) => {
     const updatedBlogs = BlogPost.find((blog) => {
       return +blog._id === +blogId;

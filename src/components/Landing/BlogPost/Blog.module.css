@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.blog-holder:not(:last-of-type) {
+  border-bottom: 1px solid var(--main-beige-black);
+}
+
 .blog-image-holder {
   height: 200px;
   overflow: hidden;

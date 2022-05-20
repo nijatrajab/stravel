@@ -10,11 +10,12 @@ const About = () => {
   return (
     <>
       {/* <Head /> */}
-      <div style={{ position: "relative", height: "10px", overflow: "hidden" }}></div>
+      <div style={{ position: "relative", height: "80px", overflow: "hidden" }}></div>
+      <AboutUs aboutUs={aboutUs[0]} />
       <Content>
-        <ContentSection>
+        {/* <ContentSection>
           <AboutUs aboutUs={aboutUs[0]} />
-        </ContentSection>
+        </ContentSection> */}
         <ContentSection>
           <Team ourTeam={aboutUs[1]}/>
         </ContentSection>

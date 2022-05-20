@@ -17,8 +17,20 @@ const modalVariants = {
 }
 
 
+const backdropVariants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  }
+}
+
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClose}/>;
+  return <motion.div variants={backdropVariants} initial="hidden" animate="visible" exit="exit" className={classes.backdrop} onClick={props.onClose} />;
 };
 
 const ModalOverlay = (props) => {

@@ -8,21 +8,12 @@ import "./App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from "react";
+import useScrollToTop from "./hooks/use-scroll";
+import useDisablePinchZoomEffect from "./hooks/use-pinchzoom";
 
 function App() {
-  
-  // useEffect(() => {
-  //   const docWidth = document.documentElement.offsetWidth;
-  //   [].forEach.call(
-  //     document.querySelectorAll('*'),
-  //     function(el) {
-  //       if (el.offsetWidth > docWidth) {
-  //         console.log(el, "this is this");
-  //       }
-  //     }
-  //   );
-  // }, [])
-
+  useScrollToTop()
+  useDisablePinchZoomEffect()
 
   return (
     <Layout>
@@ -30,6 +21,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="*" element={<Landing />} />
       </Routes>
     </Layout>
   );

@@ -5,15 +5,15 @@
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .content {
-    margin: auto 5px;
-    width: calc(100vw - 10px);
+    margin: auto 10px;
+    width: calc(100vw - 20px);
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .content {
-    margin: auto 50px;
-    width: calc(100vw - 100px);
+    margin: auto 20px;
+    width: calc(100vw - 40px);
   }
 }
 

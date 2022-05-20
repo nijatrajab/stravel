@@ -24,11 +24,12 @@ const Navigation = (props) => {
       setShowModal(false);
     }
   }, [mobileDevice]);
+
   return (
     <div className={classes.home}>
       <AnimatePresence>
         {showModal && (
-          <Modal onClose={onCloseHandler}>
+          <Modal onClose={onCloseHandler} className={classes["modal-class"]}>
             <HeaderHamburger onClose={onCloseHandler} />
           </Modal>
         )}

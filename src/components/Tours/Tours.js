@@ -11,6 +11,7 @@ import { useMediaQuery } from "@mui/material";
 import Modal from "../../UI/Modal";
 
 import classes from "./Tours.module.css";
+import Content from "../../UI/Content";
 
 const Tours = () => {
   const [filterActive, setFilterActive] = useState(false);
@@ -33,7 +34,11 @@ const Tours = () => {
     filterComp = (
       <Modal onClose={onCloseHandler}>
         <StyledEngineProvider injectFirst>
-          <TourFilter key={`TourFilter`} mediaQuery={notDesktopDevice} onClose={onCloseHandler}/>
+          <TourFilter
+            key={`TourFilter`}
+            mediaQuery={notDesktopDevice}
+            onClose={onCloseHandler}
+          />
         </StyledEngineProvider>
       </Modal>
     );
@@ -47,7 +52,7 @@ const Tours = () => {
         <HeaderSlide />
       </div>
 
-      <div style={{ margin: "auto 14%", textAlign: "center" }}>
+      <Content>
         <ContentSection sectionClass={classes["tour-page"]}>
           <TourList
             key={`TourFilter1`}
@@ -57,7 +62,7 @@ const Tours = () => {
           />
           <AnimatePresence>{filterComp}</AnimatePresence>
         </ContentSection>
-      </div>
+      </Content>
     </TourProvider>
   );
 };

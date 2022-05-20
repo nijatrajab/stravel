@@ -1,0 +1,34 @@
+.sign-svg {
+    width: 100%;
+    height: 100px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .sign-svg {
+        height: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .sign-svg {
+        height: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sign-svg {
+        height: 40px;
+    }
+  }
+  
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .sign-svg {
+        height: 70px;
+    }
+  }
+  
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .sign-svg {
+        height: 90px;
+    }
+  }

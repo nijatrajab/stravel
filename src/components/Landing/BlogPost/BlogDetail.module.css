@@ -94,11 +94,11 @@
   
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .blog-image-holder {
-      height: 150px;
+      height: 100px;
     }
     
     .blog-content {
-      height: 300px;
+      height: 350px;
       background-color: var(--main-dark-beige);
     }
     
@@ -113,7 +113,7 @@
     }
     
     .blog-desc {
-      line-height: 1.3rem;
+      line-height: 1.2rem;
     }
     
     .blog-title {
@@ -127,11 +127,11 @@
   
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     .blog-image-holder {
-      height: 160px;
+      height: 120px;
     }
     
     .blog-content {
-      height: 320px;
+      height: 360px;
       background-color: var(--main-dark-beige);
     }
     
@@ -156,11 +156,11 @@
   }
   @media screen and (min-width: 1025px) and (max-width: 1200px) {
     .blog-image-holder {
-      height: 170px;
+      height: 150px;
     }
     
     .blog-content {
-      height: 340px;
+      height: 360px;
       background-color: var(--main-dark-beige);
     }
     

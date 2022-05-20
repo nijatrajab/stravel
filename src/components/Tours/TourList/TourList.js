@@ -5,6 +5,7 @@ import Tour from "./Tour";
 import classes from "./TourList.module.css";
 import TourContext from "../../../store/tour-context";
 import SortingFilter from "./Filter/SortingFilter";
+import StyledBtn from "../../Utils/StyledBtn";
 import Button from "../../../UI/Button";
 
 const tourListVariants = {
@@ -31,7 +32,7 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
   const tourCtx = useContext(TourContext);
   const tourListAnimate = useAnimation();
 
-  console.log("Checking changing", tourCtx.isChanged)
+  console.log("Checking changing", tourCtx.isChanged);
 
   const tourList = useMemo(() => {
     return tourCtx.mainTours.map((mainTour, idx) => (
@@ -48,6 +49,10 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
       : tourListAnimate.start("hidden");
   }, [filterState, tourListAnimate]);
 
+  const filterStateHandler = () => {
+    filterStateFn((prevState) => !prevState)
+  }
+
   return (
     <motion.div
       layout
@@ -62,14 +67,22 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
         <motion.p>Total founded tours: {tourCtx.mainTours.length}</motion.p>
         <div className={classes["tourlist-btns"]}>
           <SortingFilter />
-          <Button
+          <StyledBtn
+            className={`${classes["advanced-filter"]} ${
+              filterState ? classes["advanced-filter-active"] : ""
+            }`}
+            onEvent={filterStateHandler}
+          >
+            Advanced filter
+          </StyledBtn>
+          {/* <Button
             buttonClass={`${classes["advanced-filter"]} ${
               filterState ? classes["advanced-filter-active"] : ""
             }`}
             onClick={() => filterStateFn((prevState) => !prevState)}
           >
             Advanced filter
-          </Button>
+          </Button> */}
         </div>
       </motion.div>
       <motion.div

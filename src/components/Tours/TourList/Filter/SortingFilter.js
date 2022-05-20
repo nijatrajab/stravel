@@ -33,7 +33,6 @@ const SortingFilter = () => {
       tourCtxDefault={options[0].value}
       selectData={options}
       selectName={"sort"}
-      selectClass={classes["sorting"]}
     />
   );
 };

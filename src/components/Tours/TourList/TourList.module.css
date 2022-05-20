@@ -30,13 +30,7 @@
 }
 
 .advanced-filter {
-  color: var(--main-beige);
-  padding: 17.5px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: var(--main-beige-black);
-  font: inherit;
-  margin-left: 1rem;
-  transition: all 300ms;
+  margin-bottom: 0 !important;
 }
 
 .advanced-filter:hover {
@@ -51,4 +45,73 @@
 
 .advanced-filter-active:hover {
   background-color: var(--main-beige-black);
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .tour-list {
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .tour-sort {
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 1rem;
+  }
+  
+  .tour-sort p {
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .tourlist-btns {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tour-list {
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.8fr));
+  }
+
+
+  .tour-sort {
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 1rem;
+  }
+  
+  .tour-sort p {
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .tourlist-btns {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .tour-list {
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.8fr));
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .tour-list {
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.8fr));
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+
 }

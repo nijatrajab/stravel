@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import classes from "./Sign.module.css"
+
 const signVariants = {
     hidden: {pathLength: 0},
     visible: {pathLength: 1, transition: {duration: 2, ease: "easeInOut"}},
@@ -10,8 +12,7 @@ const signVariants = {
 const Sign = () => {
   return (
     <motion.svg
-      width="100%"
-      height="100"
+      className={classes["sign-svg"]}
       viewBox="0 0 264.58333 52.916669"
       version="1.1"
       id="svg5"

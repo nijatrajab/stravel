@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import classes from "./AboutUs.module.css";
@@ -56,64 +57,77 @@ const descVariants = {
 
 const AboutUs = ({ children, aboutUs }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const mobileOrTablet = useMediaQuery("(max-width:768px)");
   const isHoverControl = useAnimation();
 
+  console.log("This is mobile for who we are", mobileOrTablet)
+
+  const mobileClickHandler = () => {
+    if (mobileOrTablet) {
+      setIsHovered((prevState) => !prevState);
+    }
+  };
+
   return (
-    <motion.div
-      className={classes["about-holder"]}
+    <div
+      className={classes["about-top"]}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={mobileClickHandler}
     >
-      <motion.img
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-200px" }}
-        src={aboutUs.image}
-        alt={aboutUs.title}
-      />
-      <motion.div
-        className={classes["content-holder"]}
-        variants={bgVariants}
-        initial="hidden"
-        whileInView={() => {
-          isHoverControl.start("visible");
-          return !isHovered ? "visible" : "isHovered";
-        }}
-        viewport={{ once: true, margin: "-200px" }}
-      >
-        <AnimatePresence exitBeforeEnter>
-          <>
-            {!isHovered &&
-              aboutUs.title.split(" ").map((titleWord, idx) => {
-                return (
-                  <Title
-                    key={`titleWord-${idx}-${Math.random().toString()}`}
-                    title={titleWord}
-                    index={idx}
-                    animControl={isHoverControl}
-                  />
-                );
-              })}
-            {isHovered && (
-              <div className={classes["sign-desc"]}>
-                <motion.p
-                  className={classes["about-desc"]}
-                  variants={descVariants}
-                  exit="exit"
-                  initial="hidden"
-                  animate="visible"
-                  key="desc-about"
-                >
-                  {aboutUs.desc}
-                </motion.p>
-                <Sign />
-              </div>
-            )}
-          </>
-        </AnimatePresence>
+      <motion.div className={classes["about-holder"]}>
+        <motion.img
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-200px" }}
+          src={aboutUs.image}
+          alt={aboutUs.title}
+        />
+        <motion.div
+          className={classes["content-holder"]}
+          variants={bgVariants}
+          initial="hidden"
+          animate={!isHovered ? "visible" : "isHovered"}
+          // whileInView={() => {
+          //   isHoverControl.start("visible");
+          //   return !isHovered ? "visible" : "isHovered";
+          // }}
+          // viewport={{ once: true, margin: "-200px" }}
+        >
+          <AnimatePresence exitBeforeEnter>
+            <>
+              {!isHovered &&
+                aboutUs.title.split(" ").map((titleWord, idx) => {
+                  return (
+                    <Title
+                      key={`titleWord-${idx}-${Math.random().toString()}`}
+                      title={titleWord}
+                      index={idx}
+                      animate={!isHovered ? "visible" : "isHovered"}
+                    />
+                  );
+                })}
+              {isHovered && (
+                <div className={classes["sign-desc"]}>
+                  <motion.p
+                    className={classes["about-desc"]}
+                    variants={descVariants}
+                    exit="exit"
+                    initial="hidden"
+                    animate="visible"
+                    key="desc-about"
+                  >
+                    {aboutUs.desc}
+                  </motion.p>
+                  <Sign />
+                </div>
+              )}
+            </>
+          </AnimatePresence>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
