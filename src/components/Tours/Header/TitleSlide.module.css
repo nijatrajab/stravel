@@ -9,12 +9,14 @@
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .slider3nav {
     padding-right: 0%;
+    bottom: 50vh;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .slider3nav {
     padding-right: 0%;
+    bottom: 50vh;
   }
 }
 

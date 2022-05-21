@@ -1,10 +1,40 @@
 .tour-page {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    background-color: var(--main-beige);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: var(--main-beige);
+}
+
+.tour-header {
+  position: relative;
+  height: 650px;
+  overflow: hidden;
 }
 
 .tour-holder {
-    background-color: var(--main-beige);
+  background-color: var(--main-beige);
 }
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .tour-header {
+        height: 100vh;
+      }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .tour-header {
+        height: 100vh;
+      }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+  }
+  
+  @media screen and (min-width: 1025px) and (max-width: 1200px) {
+  
+  }
+  
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+  
+  }

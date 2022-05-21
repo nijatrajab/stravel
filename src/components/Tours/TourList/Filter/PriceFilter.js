@@ -4,7 +4,7 @@ import RangeSlider from "./Utils/RangeSlide";
 
 import classes from "./PriceFilter.module.css";
 
-const PriceFilter = ({ children }) => {
+const PriceFilter = ({ children, mediaQuery }) => {
   const tourCtx = useContext(TourContext);
 
   return (
@@ -17,6 +17,7 @@ const PriceFilter = ({ children }) => {
       tourCtxMaxDef={tourCtx.filterDefaults.priceMaxLimit}
       sliderClass={classes["price-slider"]}
       sliderId="price"
+      mediaQuery={mediaQuery}
     />
   );
 };

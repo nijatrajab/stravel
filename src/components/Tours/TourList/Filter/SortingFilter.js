@@ -30,7 +30,7 @@ const SortingFilter = () => {
   return (
     <SelectUtil
       tourCtxFn={tourCtx.tourSortFilter}
-      tourCtxDefault={options[0].value}
+      tourCtxValue={tourCtx.filterConfigs.tourSort}
       selectData={options}
       selectName={"sort"}
     />

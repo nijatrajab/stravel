@@ -30,11 +30,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .close-filter:hover {
   border: 1px solid rgba(0, 0, 0, 1);
   background-color: var(--main-orange);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.filter-action-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-action-buttons button {
+  margin-inline: 0.1rem;
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
@@ -55,6 +75,10 @@
   .close-filter {
     padding: 5px;
   }
+
+  .filter-action-buttons {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -62,6 +86,9 @@
     flex-basis: 100% !important;
     width: 100% !important;
     margin-inline: 50px !important;
+  }
+  .filter-action-buttons {
+    width: auto;
   }
 }
 
@@ -71,6 +98,9 @@
     width: 100% !important;
     margin-inline: 50px !important;
   }
+  .filter-action-buttons {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -79,6 +109,9 @@
     width: 100% !important;
     margin-inline: 50px !important;
   }
+  .filter-action-buttons {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1600px) {
@@ -86,5 +119,8 @@
     flex-basis: 100% !important;
     width: 100% !important;
     margin-inline: 50px !important;
+  }
+  .filter-action-buttons {
+    width: auto;
   }
 }

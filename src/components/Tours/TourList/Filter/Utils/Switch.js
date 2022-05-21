@@ -7,10 +7,10 @@ const SwitchUtil = ({
   tourCtxFn,
   switchData,
   switchTitle,
+  mediaQuery
 }) => {
   const onChangeHandler = (event) => {
-    console.log(event.target.checked);
-    tourCtxFn(event.target.checked);
+    tourCtxFn(event.target.checked, mediaQuery);
   };
   return (
     <div className={classes["switch"]}>

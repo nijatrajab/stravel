@@ -4,6 +4,7 @@
   height: inherit;
 }
 
+.content-card:hover .content-card-img img,
 .content-card:hover .content-card-img img {
   transform: scale(1.05);
 }

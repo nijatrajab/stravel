@@ -47,26 +47,25 @@ const Tours = () => {
 
   return (
     <TourProvider>
-      <div
-        style={{ position: "relative", height: "650px", overflow: "hidden" }}
-      >
+      <div className={classes["tour-header"]}>
         <HeaderSlide />
       </div>
 
       <Content>
-      
         <ContentSection sectionClass={classes["tour-holder"]}>
-        <HeadingText title="OUR TOURS!" desc="Lorem ipsum dolor sit amet, his convenire similique efficiendi et."/>
-        <div className={classes["tour-page"]}>
-        <TourList
-            key={`TourFilter1`}
-            filterState={filterActive}
-            filterStateFn={setFilterActive}
-            isNotDesktop={notDesktopDevice}
+          <HeadingText
+            title="OUR TOURS!"
+            desc="Lorem ipsum dolor sit amet, his convenire similique efficiendi et."
           />
-          <AnimatePresence>{filterComp}</AnimatePresence>
-        </div>
-
+          <div className={classes["tour-page"]}>
+            <TourList
+              key={`TourFilter1`}
+              filterState={filterActive}
+              filterStateFn={setFilterActive}
+              isNotDesktop={notDesktopDevice}
+            />
+            <AnimatePresence>{filterComp}</AnimatePresence>
+          </div>
         </ContentSection>
       </Content>
     </TourProvider>

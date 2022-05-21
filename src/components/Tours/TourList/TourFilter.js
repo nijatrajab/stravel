@@ -4,6 +4,8 @@ import DaysFilter from "./Filter/DaysFilter";
 import DiscountFilter from "./Filter/DiscountFilter";
 import SpecialFilter from "./Filter/SpecialFilter";
 import TypeFilter from "./Filter/TypeFilter";
+import ClearFilter from "./Filter/ClearFilter";
+import ApplyFilter from "./Filter/ApplyFilter";
 
 import { motion } from "framer-motion";
 import classes from "./TourFilter.module.css";
@@ -48,37 +50,37 @@ const TourFilter = ({ children, mediaQuery, onClose }) => {
   const filterComp = (
     <>
       <div className={classes["filter-buttons"]}>
-        {!mediaQuery ? (
-          ""
-        ) : (
-          <StyledBtn onEvent={onClose}>
+        {mediaQuery && <StyledBtn onEvent={onClose}>
             <VscChromeClose />
-          </StyledBtn>
-        )}
+          </StyledBtn>}
+        <div className={classes["filter-action-buttons"]}>
+          <ClearFilter onClose={onClose} />
+          {mediaQuery && <ApplyFilter mediaQuery={mediaQuery} onClose={onClose} />}
+        </div>
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY TITLE</p>
-        <TitleFilter />
+        <TitleFilter mediaQuery={mediaQuery} />
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY PRICE</p>
-        <PriceFilter />
+        <PriceFilter mediaQuery={mediaQuery} />
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY DAYS</p>
-        <DaysFilter />
+        <DaysFilter mediaQuery={mediaQuery} />
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY DISCOUNT</p>
-        <DiscountFilter />
+        <DiscountFilter mediaQuery={mediaQuery} />
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY SPECIAL</p>
-        <SpecialFilter />
+        <SpecialFilter mediaQuery={mediaQuery} />
       </div>
       <div className={classes["filter"]}>
         <p>FILTER BY TYPE</p>
-        <TypeFilter />
+        <TypeFilter mediaQuery={mediaQuery} />
       </div>
     </>
   );

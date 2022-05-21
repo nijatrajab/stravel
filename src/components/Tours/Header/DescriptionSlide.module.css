@@ -10,12 +10,14 @@
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .slider4nav {
     padding-right: 0%;
+    bottom: 35vh;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .slider4nav {
     padding-right: 0%;
+    bottom: 35vh;
   }
 }
 

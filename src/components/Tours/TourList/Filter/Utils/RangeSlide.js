@@ -17,12 +17,13 @@ const RangeSlider = ({
   tourCtxMaxDef,
   sliderClass,
   sliderId,
+  mediaQuery
 }) => {
   const [hasError, setHasError] = useState(false);
 
   const onSliderChange = (event) => {
-    tourCtxMinFn(event.target.value[0]);
-    tourCtxMaxFn(event.target.value[1]);
+    tourCtxMinFn(event.target.value[0], mediaQuery);
+    tourCtxMaxFn(event.target.value[1], mediaQuery);
   };
 
   const onMinSliderChange = (event) => {
@@ -31,7 +32,7 @@ const RangeSlider = ({
     } else {
       setHasError(false);
     }
-    tourCtxMinFn(event.target.value);
+    tourCtxMinFn(event.target.value, mediaQuery);
   };
 
   const onMaxSliderChange = (event) => {
@@ -40,7 +41,7 @@ const RangeSlider = ({
     } else {
       setHasError(false);
     }
-    tourCtxMaxFn(event.target.value);
+    tourCtxMaxFn(event.target.value, mediaQuery);
   };
 
   const onAfterChange = (value) => {};

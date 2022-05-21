@@ -4,7 +4,7 @@ import RangeSlider from "./Utils/RangeSlide";
 
 import classes from "./DaysFilter.module.css";
 
-const DaysFilter = ({ children }) => {
+const DaysFilter = ({ children, mediaQuery }) => {
   const tourCtx = useContext(TourContext);
 
   return (
@@ -17,6 +17,7 @@ const DaysFilter = ({ children }) => {
       tourCtxMaxDef={tourCtx.filterDefaults.daysMaxLimit}
       sliderClass={classes["days-slider"]}
       sliderId="days"
+      mediaQuery={mediaQuery}
     />
   );
 };

@@ -1,5 +1,5 @@
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
-import SliderArrowButton from "../../Slider/SliderArrow";
+import SliderArrowButton from "../../Utils/SliderArrow";
 import { headerSlide } from "../../../store/constant-images";
 import SliderModel from "../../../UI/SliderModel";
 

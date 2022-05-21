@@ -4,7 +4,7 @@ import TourContext from "../../../../store/tour-context";
 import SwitchUtil from "./Utils/Switch";
 
 
-const DiscountFilter = () => {
+const DiscountFilter = ({children, mediaQuery}) => {
   const tourCtx = useContext(TourContext);
 
   return (
@@ -12,6 +12,7 @@ const DiscountFilter = () => {
       tourCtxFn={tourCtx.discountFilter}
       switchData={tourCtx.filterConfigs.discount}
       switchTitle="View discounted tours only"
+      mediaQuery={mediaQuery}
     />
   );
 };

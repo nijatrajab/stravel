@@ -6,7 +6,6 @@ import classes from "./TourList.module.css";
 import TourContext from "../../../store/tour-context";
 import SortingFilter from "./Filter/SortingFilter";
 import StyledBtn from "../../Utils/StyledBtn";
-import Button from "../../../UI/Button";
 
 const tourListVariants = {
   hidden: {

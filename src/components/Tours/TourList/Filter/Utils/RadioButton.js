@@ -1,8 +1,8 @@
 import classes from "./RadioButton.module.css";
 
-const RadioButton = ({ children, value, label, tourCtxFn, defaultValue }) => {
+const RadioButton = ({ children, value, label, tourCtxFn, defaultValue, mediaQuery }) => {
   const onChangeHandler = (event) => {
-    tourCtxFn(defaultValue);
+    tourCtxFn(defaultValue, mediaQuery);
   };
 
   return (

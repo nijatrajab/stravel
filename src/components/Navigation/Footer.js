@@ -23,27 +23,55 @@ const Footer = () => {
 
   const siteMap = (
     <div className={classes["footer-map"]}>
-      <Link to="/"></Link><p>Home</p>
-      <p>Tours</p>
-      <p>About us</p>
+      <Link to="/" >
+        <p>Home</p>
+      </Link>
+
+      <Link to="tours">
+        <p>Tours</p>
+      </Link>
+
+      <Link to="about">
+        <p>About us</p>
+      </Link>
     </div>
   );
 
   const socialIcons = (
     <div className={classes["social"]}>
-      <a href="https://fb.com" target="_blank" rel="noreferrer" className={classes["social-icons"]}>
+      <a
+        href="https://fb.com"
+        target="_blank"
+        rel="noreferrer"
+        className={classes["social-icons"]}
+      >
         <RiFacebookLine />
       </a>
-      <a href="https://instagram.com" target="_blank" rel="noreferrer" className={classes["social-icons"]}>
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noreferrer"
+        className={classes["social-icons"]}
+      >
         <RiInstagramLine />
       </a>
       <a href="mailto:someone@stravel.com" className={classes["social-icons"]}>
         <RiMailLine />
       </a>
-      <a href="https://t.me" target="_blank" rel="noreferrer" className={classes["social-icons"]}>
+      <a
+        href="https://t.me"
+        target="_blank"
+        rel="noreferrer"
+        className={classes["social-icons"]}
+      >
         <RiTelegramLine />
       </a>
-      <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer" className={classes["social-icons"]}>
+      <a
+        href="https://web.whatsapp.com/"
+        target="_blank"
+        rel="noreferrer"
+        className={classes["social-icons"]}
+      >
         <RiWhatsappLine />
       </a>
     </div>

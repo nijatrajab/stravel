@@ -14,7 +14,9 @@ const TourContext = React.createContext({
     discountFilter: (discountQ) => {},
     specialFilter: (specialQ) => {},
     tourTypeFilter: (tourTypeQ) => {},
-    tourSortFilter: (sortTypeBy, sortTypeQ) => {}
+    tourSortFilter: (sortTypeBy, sortTypeQ) => {},
+    applyFilter: () => {},
+    clearFilter: () => {}
 });
 
 export default TourContext;

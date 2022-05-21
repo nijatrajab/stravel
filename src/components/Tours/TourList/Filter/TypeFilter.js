@@ -4,7 +4,7 @@ import TourContext from "../../../../store/tour-context";
 import classes from "./TypeFilter.module.css";
 import RadioButton from "./Utils/RadioButton";
 
-const TypeFilter = () => {
+const TypeFilter = ({children, mediaQuery}) => {
   const tourCtx = useContext(TourContext);
   const options = [];
   tourCtx.filterDefaults.tourTypeData.map((item) => {
@@ -25,6 +25,7 @@ const TypeFilter = () => {
               value={tourCtx.filterConfigs.tourType}
               label={item.label}
               defaultValue={item.value}
+              mediaQuery={mediaQuery}
             />
           );
         })}

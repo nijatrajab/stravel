@@ -6,13 +6,13 @@ import classes from './Modal.module.css';
 
 const modalVariants = {
   hidden: {
-    x: 600
+    x: "100%"
   },
   visible: {
-    x: 0,
+    x: "0%",
   },
   exit: {
-    x: 600,
+    x: "100%",
   }
 }
 

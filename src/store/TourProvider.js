@@ -11,6 +11,8 @@ export const SPECIAL_QUERY = "SPECIAL_QUERY";
 export const DISCOUNT_QUERY = "DISCOUNT_QUERY";
 export const TOURTYPE_QUERY = "TOURTYPE_QUERY";
 export const TOURSORT_QUERY = "TOURSORT_QUERY";
+export const APPLY_FILTER = "APPLY_FILTER";
+export const CLEAR_FILTER = "CLEAR_FILTER";
 
 const priceMinDefault = Math.min(...mainTours.map((i) => i.price));
 const priceMaxLimit = Math.max(...mainTours.map((i) => i.price));
@@ -30,7 +32,7 @@ const defaultTourState = {
     daysMaxLimit: daysMaxLimit,
     tourTypeData: ["All", ...tourTypeData],
     specialData: false,
-    discountData: false
+    discountData: false,
   },
   filterConfigs: {
     title: "",
@@ -81,30 +83,24 @@ const tourFiltering = ({
 
   if (tourSort.sortBy !== "Default") {
     if (tourSort.sortValue === "asc") {
-      console.log("ascending");
       filteredTour.sort((a, b) => {
         if (sortBy === "price") {
-          console.log("price sorting asc");
           return (
             (a.discount ? +a["discountPrice"] : +a["price"]) -
             (b.discount ? +b["discountPrice"] : +b["price"])
           );
         } else {
-          console.log("title sorting asc");
           return a[sortBy].normalize().localeCompare(b[sortBy].normalize());
         }
       });
     } else if (tourSort.sortValue === "desc") {
-      console.log("descending");
       filteredTour.sort((a, b) => {
         if (sortBy === "price") {
-          console.log("price sorting desc");
           return (
             (b.discount ? +b["discountPrice"] : +b["price"]) -
             (a.discount ? +a["discountPrice"] : +a["price"])
           );
         } else {
-          console.log("title sorting desc");
           return b[sortBy].normalize().localeCompare(a[sortBy].normalize());
         }
       });
@@ -114,192 +110,107 @@ const tourFiltering = ({
   return filteredTour;
 };
 
+const filterAction = (queryKey, queryParam, isNotDesktop, state) => {
+  const updatedFilterConfig = {
+    ...state.filterConfigs,
+    [queryKey]: queryParam,
+  };
+  console.log(updatedFilterConfig)
+  if (isNotDesktop) {
+    return { ...state, filterConfigs: updatedFilterConfig };
+  } else {
+    const updatedTours = tourFiltering(updatedFilterConfig);
+    const is_same =
+      updatedTours.length === state.mainTours.length &&
+      updatedTours.every(function (element, index) {
+        return element === state.mainTours[index];
+      });
+    return {
+      ...state,
+      mainTours: is_same ? state.mainTours : updatedTours,
+      isChanged: is_same,
+      filterConfigs: updatedFilterConfig,
+    };
+  }
+};
+
+
 const tourReducer = (state, action) => {
-  const titleQueryFilter = (titleQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      title: titleQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, title: titleQuery },
-    };
+  const titleQueryFilter = (titleQuery, isNotDesktop, filterState) => {
+    return filterAction("title", titleQuery, isNotDesktop, filterState)
+  };
+  const PriceMinQueryFilter = (priceMinQuery, isNotDesktop, filterState) => {
+    return filterAction("priceMin", +priceMinQuery, isNotDesktop, filterState)
+  };
+  const PriceMaxQueryFilter = (priceMaxQuery,isNotDesktop, filterState) => {
+    return filterAction("priceMax", +priceMaxQuery, isNotDesktop, filterState)
+  };
+  const DaysMinQueryFilter = (daysMinQuery,isNotDesktop, filterState) => {
+    return filterAction("daysMin", +daysMinQuery, isNotDesktop, filterState)
+  };
+  const DaysMaxQueryFilter = (daysMaxQuery,isNotDesktop, filterState) => {
+    return filterAction("daysMax", +daysMaxQuery, isNotDesktop, filterState)
+  };
+  const SpecialQueryFilter = (specialQuery,isNotDesktop, filterState) => {
+    return filterAction("special", specialQuery, isNotDesktop, filterState)
+  };
+  const DiscountQueryFilter = (discountQuery,isNotDesktop, filterState) => {
+    return filterAction("discount", discountQuery, isNotDesktop, filterState)
+  };
+  const TourTypeQueryFilter = (tourTypeQuery,isNotDesktop, filterState) => {
+    return filterAction("tourType", tourTypeQuery, isNotDesktop, filterState)
+  };
+  const SortingFilter = (sortBy, sortValue,isNotDesktop, filterState) => {
+    return filterAction("tourSort", { sortBy: sortBy, sortValue: sortValue }, isNotDesktop, filterState)
   };
 
-  const PriceMinQueryFilter = (priceMinQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      priceMin: +priceMinQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, priceMin: +priceMinQuery },
-    };
+  const ApplyFilter = (isNotDesktop, filterState) => {
+    if (isNotDesktop) {
+      console.log(filterState.filterConfigs)
+      const updatedTours = tourFiltering(filterState.filterConfigs);
+      const is_same =
+        updatedTours.length === state.mainTours.length &&
+        updatedTours.every(function (element, index) {
+          return element === state.mainTours[index];
+        });
+      return {
+        ...state,
+        mainTours: is_same ? state.mainTours : updatedTours,
+        isChanged: is_same,
+      };
+    } else {
+      return defaultTourState
+    }
   };
 
-  const PriceMaxQueryFilter = (priceMaxQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      priceMax: +priceMaxQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, priceMax: +priceMaxQuery },
-    };
-  };
-
-  const DaysMinQueryFilter = (daysMinQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      daysMin: +daysMinQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, daysMin: +daysMinQuery },
-    };
-  };
-  const DaysMaxQueryFilter = (daysMaxQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      daysMax: +daysMaxQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, daysMax: +daysMaxQuery },
-    };
-  };
-  const SpecialQueryFilter = (specialQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      special: specialQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, special: specialQuery },
-    };
-  };
-  const DiscountQueryFilter = (discountQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      discount: discountQuery,
-    });
-
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, discount: discountQuery },
-    };
-  };
-  const TourTypeQueryFilter = (tourTypeQuery, state) => {
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      tourType: tourTypeQuery,
-    });
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: { ...state.filterConfigs, tourType: tourTypeQuery },
-    };
-  };
-
-  const SortingFilter = (sortBy, sortValue, state) => {
-    console.log(state.filterConfigs);
-    const updatedTours = tourFiltering({
-      ...state.filterConfigs,
-      tourSort: { sortBy: sortBy, sortValue: sortValue },
-    });
-
-    const is_same =
-      updatedTours.length === state.mainTours.length &&
-      updatedTours.every(function (element, index) {
-        return element === state.mainTours[index];
-      });
-    return {
-      ...state,
-      mainTours: is_same ? state.mainTours : updatedTours,
-      isChanged: is_same,
-      filterConfigs: {
-        ...state.filterConfigs,
-        tourSort: { sortBy: sortBy, sortValue: sortValue },
-      },
-    };
+  const ClearFilter = () => {
+    return defaultTourState
   };
 
   switch (action.type) {
     case TITLE_QUERY:
-      return titleQueryFilter(action.titleQuery, state);
+      return titleQueryFilter(action.titleQuery, action.isNotDesktop, state);
     case PRICEMIN_QUERY:
-      return PriceMinQueryFilter(action.priceMinQuery, state);
+      return PriceMinQueryFilter(action.priceMinQuery, action.isNotDesktop, state);
     case PRICEMAX_QUERY:
-      return PriceMaxQueryFilter(action.priceMaxQuery, state);
+      return PriceMaxQueryFilter(action.priceMaxQuery, action.isNotDesktop, state);
     case DAYSMIN_QUERY:
-      return DaysMinQueryFilter(action.daysMinQuery, state);
+      return DaysMinQueryFilter(action.daysMinQuery, action.isNotDesktop, state);
     case DAYSMAX_QUERY:
-      return DaysMaxQueryFilter(action.daysMaxQuery, state);
+      return DaysMaxQueryFilter(action.daysMaxQuery, action.isNotDesktop, state);
     case SPECIAL_QUERY:
-      return SpecialQueryFilter(action.specialQuery, state);
+      return SpecialQueryFilter(action.specialQuery, action.isNotDesktop, state);
     case DISCOUNT_QUERY:
-      return DiscountQueryFilter(action.discountQuery, state);
+      return DiscountQueryFilter(action.discountQuery, action.isNotDesktop, state);
     case TOURTYPE_QUERY:
-      return TourTypeQueryFilter(action.tourTypeQuery, state);
+      return TourTypeQueryFilter(action.tourTypeQuery, action.isNotDesktop, state);
     case TOURSORT_QUERY:
-      return SortingFilter(action.sortBy, action.sortValue, state);
+      return SortingFilter(action.sortBy, action.sortValue, action.isNotDesktop, state);
+
+    case APPLY_FILTER:
+      return ApplyFilter(action.isNotDesktop, state);
+    case CLEAR_FILTER:
+      return ClearFilter();
     default:
       return defaultTourState;
   }
@@ -311,32 +222,38 @@ const TourProvider = (props) => {
     defaultTourState
   );
 
-  const titleFilterHandler = (titleQuery) => {
-    dispatchFilterAction({ type: TITLE_QUERY, titleQuery });
+  const titleFilterHandler = (titleQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: TITLE_QUERY, titleQuery, isNotDesktop });
   };
-  const priceMinFilterHandler = (priceMinQuery) => {
-    dispatchFilterAction({ type: PRICEMIN_QUERY, priceMinQuery });
+  const priceMinFilterHandler = (priceMinQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: PRICEMIN_QUERY, priceMinQuery, isNotDesktop });
   };
-  const priceMaxFilterHandler = (priceMaxQuery) => {
-    dispatchFilterAction({ type: PRICEMAX_QUERY, priceMaxQuery });
+  const priceMaxFilterHandler = (priceMaxQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: PRICEMAX_QUERY, priceMaxQuery, isNotDesktop });
   };
-  const daysMinFilterHandler = (daysMinQuery) => {
-    dispatchFilterAction({ type: DAYSMIN_QUERY, daysMinQuery });
+  const daysMinFilterHandler = (daysMinQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: DAYSMIN_QUERY, daysMinQuery, isNotDesktop });
   };
-  const daysMaxFilterHandler = (daysMaxQuery) => {
-    dispatchFilterAction({ type: DAYSMAX_QUERY, daysMaxQuery });
+  const daysMaxFilterHandler = (daysMaxQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: DAYSMAX_QUERY, daysMaxQuery, isNotDesktop });
   };
-  const specialFilterHandler = (specialQuery) => {
-    dispatchFilterAction({ type: SPECIAL_QUERY, specialQuery });
+  const specialFilterHandler = (specialQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: SPECIAL_QUERY, specialQuery, isNotDesktop });
   };
-  const discountFilterHandler = (discountQuery) => {
-    dispatchFilterAction({ type: DISCOUNT_QUERY, discountQuery });
+  const discountFilterHandler = (discountQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: DISCOUNT_QUERY, discountQuery, isNotDesktop });
   };
-  const tourTypeFilterHandler = (tourTypeQuery) => {
-    dispatchFilterAction({ type: TOURTYPE_QUERY, tourTypeQuery });
+  const tourTypeFilterHandler = (tourTypeQuery, isNotDesktop) => {
+    dispatchFilterAction({ type: TOURTYPE_QUERY, tourTypeQuery, isNotDesktop });
   };
-  const tourSortFilterHandler = (sortBy, sortValue) => {
-    dispatchFilterAction({ type: TOURSORT_QUERY, sortBy, sortValue });
+  const tourSortFilterHandler = (sortBy, sortValue, isNotDesktop) => {
+    dispatchFilterAction({ type: TOURSORT_QUERY, sortBy, sortValue, isNotDesktop });
+  };
+  const applyFilterHandler = (isNotDesktop) => {
+    dispatchFilterAction({ type: APPLY_FILTER, isNotDesktop });
+  };
+  const clearFilterHandler = () => {
+    dispatchFilterAction({ type: CLEAR_FILTER });
   };
 
   const tourContext = {
@@ -353,6 +270,8 @@ const TourProvider = (props) => {
     specialFilter: specialFilterHandler,
     tourTypeFilter: tourTypeFilterHandler,
     tourSortFilter: tourSortFilterHandler,
+    applyFilter: applyFilterHandler,
+    clearFilter: clearFilterHandler,
   };
 
   return (
