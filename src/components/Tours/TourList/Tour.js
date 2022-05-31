@@ -1,31 +1,42 @@
+import { useMediaQuery } from "@mui/material";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-import Card from "../../../UI/Card";
+import Card from "../../UI/Card";
+import MobileClick from "../../Utils/MobileClick";
 import ShortDetails from "./Details/ShortDetails";
 import TitleDetails from "./Details/TitleDetails";
 import classes from "./Tour.module.css";
 
-const tourCardVariants = {
+const mobileVariants = {
   hidden: {
-    // perspective: "0px",
-    // rotateY: "0deg",
+    y: -50,
+    transition: {
+      duration: 0.5,
+    },
   },
   visible: {
-    // perspective: "1000px",
-    // rotateY: "15deg",
-    // transition: {
-    //   delay: 0.1,
-    // },
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    y: -50,
+    transition: {
+      delay: 0.1,
+      duration: 0.5,
+    },
   },
 };
+
 const tourVariants = {
   hidden: {
     top: "260px",
     height: "240px",
     transition: {
-      top: {delay: 0},
-      height: {delay: 0.2, duration: 0.1},
+      top: { delay: 0 },
+      height: { delay: 0.2, duration: 0.1 },
       when: "afterChildren",
     },
   },
@@ -33,11 +44,11 @@ const tourVariants = {
     top: "0px",
     height: "600px",
     backgroundImage:
-      "linear-gradient(to top, rgba(0, 0, 0, 1),90%, rgba(0, 0, 0, 0))",
+      "linear-gradient(to top, rgba(var(--secondary-component-bg), 1), 90%, rgba(var(--secondary-component-bg), 0))",
 
     transition: {
-      top: {delay: 0.2},
-      height: {delay: 0, duration: 0.1},
+      top: { delay: 0.2 },
+      height: { delay: 0, duration: 0.1 },
       when: "beforeChildren",
     },
   },
@@ -61,6 +72,8 @@ const Tour = ({ children, mainTour }) => {
   const [isHovered, setIsHovered] = useState(false);
   const overlay = useAnimation();
   const discountAnimate = useAnimation();
+  const mobileOrTablet = useMediaQuery("(max-width:768px)");
+  console.log("one tour")
 
   useEffect(() => {
     isHovered ? overlay.start("visible") : overlay.start("hidden");
@@ -69,14 +82,33 @@ const Tour = ({ children, mainTour }) => {
       : discountAnimate.start("hidden");
   }, [isHovered, overlay, discountAnimate]);
 
+  const mobileClickHandler = () => {
+    if (mobileOrTablet) {
+      setIsHovered((prevState) => !prevState);
+    }
+  };
+
+  const onMouseEnterHandlerIsHovered = () => {
+    if (!mobileOrTablet) {
+      setIsHovered(true);
+    }
+  };
+
+  const onMouseLeaveHandlerIsHovered = () => {
+    if (!mobileOrTablet) {
+      setIsHovered(false);
+    }
+  };
+
   return (
     <motion.div
       layout
-      key={mainTour._id}
+      layoutId={`tour-layout-${mainTour._id}`}
+      key={`tour-${mainTour._id}`}
       className={classes["tour-card"]}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsHovered(!isHovered)}
+      onMouseEnter={onMouseEnterHandlerIsHovered}
+      onMouseLeave={onMouseLeaveHandlerIsHovered}
+      onClick={mobileClickHandler}
     >
       <Card cardClass={classes["card-class"]}>
         <motion.img
@@ -87,6 +119,15 @@ const Tour = ({ children, mainTour }) => {
             ".jpg")}
           alt={mainTour.title}
         ></motion.img>
+        <AnimatePresence exitBeforeEnter>
+          {(mobileOrTablet && !isHovered) && (
+            <MobileClick
+              mobileClass={classes["mobile-helper"]}
+              mobileVariants={mobileVariants}
+            />
+          )}
+        </AnimatePresence>
+
         <motion.div
           className={classes["content-holder"]}
           variants={tourVariants}

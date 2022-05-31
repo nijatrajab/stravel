@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 import { mainTours } from "./constant-images";
 import TourContext from "./tour-context";
 
@@ -115,7 +115,7 @@ const filterAction = (queryKey, queryParam, isNotDesktop, state) => {
     ...state.filterConfigs,
     [queryKey]: queryParam,
   };
-  console.log(updatedFilterConfig)
+
   if (isNotDesktop) {
     return { ...state, filterConfigs: updatedFilterConfig };
   } else {
@@ -166,7 +166,6 @@ const tourReducer = (state, action) => {
 
   const ApplyFilter = (isNotDesktop, filterState) => {
     if (isNotDesktop) {
-      console.log(filterState.filterConfigs)
       const updatedTours = tourFiltering(filterState.filterConfigs);
       const is_same =
         updatedTours.length === state.mainTours.length &&
@@ -222,39 +221,39 @@ const TourProvider = (props) => {
     defaultTourState
   );
 
-  const titleFilterHandler = (titleQuery, isNotDesktop) => {
+  const titleFilterHandler = useCallback((titleQuery, isNotDesktop) => {
     dispatchFilterAction({ type: TITLE_QUERY, titleQuery, isNotDesktop });
-  };
-  const priceMinFilterHandler = (priceMinQuery, isNotDesktop) => {
+  }, []);
+  const priceMinFilterHandler = useCallback((priceMinQuery, isNotDesktop) => {
     dispatchFilterAction({ type: PRICEMIN_QUERY, priceMinQuery, isNotDesktop });
-  };
-  const priceMaxFilterHandler = (priceMaxQuery, isNotDesktop) => {
+  }, []);
+  const priceMaxFilterHandler = useCallback((priceMaxQuery, isNotDesktop) => {
     dispatchFilterAction({ type: PRICEMAX_QUERY, priceMaxQuery, isNotDesktop });
-  };
-  const daysMinFilterHandler = (daysMinQuery, isNotDesktop) => {
+  }, []);
+  const daysMinFilterHandler = useCallback((daysMinQuery, isNotDesktop) => {
     dispatchFilterAction({ type: DAYSMIN_QUERY, daysMinQuery, isNotDesktop });
-  };
-  const daysMaxFilterHandler = (daysMaxQuery, isNotDesktop) => {
+  }, []);
+  const daysMaxFilterHandler = useCallback((daysMaxQuery, isNotDesktop) => {
     dispatchFilterAction({ type: DAYSMAX_QUERY, daysMaxQuery, isNotDesktop });
-  };
-  const specialFilterHandler = (specialQuery, isNotDesktop) => {
+  }, []);
+  const specialFilterHandler = useCallback((specialQuery, isNotDesktop) => {
     dispatchFilterAction({ type: SPECIAL_QUERY, specialQuery, isNotDesktop });
-  };
-  const discountFilterHandler = (discountQuery, isNotDesktop) => {
+  }, []);
+  const discountFilterHandler = useCallback((discountQuery, isNotDesktop) => {
     dispatchFilterAction({ type: DISCOUNT_QUERY, discountQuery, isNotDesktop });
-  };
-  const tourTypeFilterHandler = (tourTypeQuery, isNotDesktop) => {
+  }, []);
+  const tourTypeFilterHandler = useCallback((tourTypeQuery, isNotDesktop) => {
     dispatchFilterAction({ type: TOURTYPE_QUERY, tourTypeQuery, isNotDesktop });
-  };
-  const tourSortFilterHandler = (sortBy, sortValue, isNotDesktop) => {
+  }, []);
+  const tourSortFilterHandler = useCallback((sortBy, sortValue, isNotDesktop) => {
     dispatchFilterAction({ type: TOURSORT_QUERY, sortBy, sortValue, isNotDesktop });
-  };
-  const applyFilterHandler = (isNotDesktop) => {
+  }, []);
+  const applyFilterHandler = useCallback((isNotDesktop) => {
     dispatchFilterAction({ type: APPLY_FILTER, isNotDesktop });
-  };
-  const clearFilterHandler = () => {
+  }, []);
+  const clearFilterHandler = useCallback(() => {
     dispatchFilterAction({ type: CLEAR_FILTER });
-  };
+  }, []);
 
   const tourContext = {
     mainTours: tourState.mainTours,

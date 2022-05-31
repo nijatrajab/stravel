@@ -1,8 +1,8 @@
 .footer {
   /* height: 7rem; */
   padding-block: 1rem;
-  background-color: var(--main-beige-black);
-  color: var(--main-beige);
+  background-color: rgb(var(--static-component-bg));
+  color: rgb(var(--static-font-color));
 }
 
 .footer-outer {
@@ -22,7 +22,7 @@
 .footer-line {
   width: 2px;
   height: 60px;
-  background-color: var(--main-beige);
+  background-color: rgb(var(--static-font-color));
   margin: 0 30px;
 }
 
@@ -40,8 +40,8 @@
   font-family: var(--main-light-font);
   display: flex;
   justify-content: left;
-  background-color: var(--main-beige-black);
-  color: var(--main-beige);
+  background-color: rgb(var(--static-component-bg));
+  color: rgb(var(--static-font-color));
   padding-block: 10px
 }
 
@@ -70,7 +70,7 @@
 
 .social-icons {
   font-size: 20px;
-  color: var(--main-beige);
+  color: rgb(var(--static-font-color));
   margin-inline: 10px
 }
 
@@ -83,40 +83,13 @@ a.social-icons {
 .social-icons {
   transition: color 300ms ease-in-out;
   cursor: pointer;
-  color: var(--main-beige);
+  color: rgb(var(--static-font-color));
 }
 
 .footer-about p:hover,
 .footer-map p:hover,
 .social-icons:hover {
-  color: var(--main-orange);
-}
-
-.footer-inner {
-  height: 7rem;
-  background-color: var(--main-dark-blue);
-}
-
-.footer-related-text {
-  margin: auto 14%;
-  padding: 20px;
-  text-align: center;
-  color: var(--main-white);
-}
-
-.footer-related-logos {
-  display: flex;
-  justify-content: space-between;
-  margin: auto 35%;
-}
-
-.partner-logo {
-  max-height: 30px;
-}
-
-.partner-logo-img {
-  height: 30px;
-  object-fit: cover;
+  color: rgb(var(--main-highlighted));
 }
 
 

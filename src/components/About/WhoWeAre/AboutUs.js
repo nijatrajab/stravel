@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import classes from "./AboutUs.module.css";
 import Sign from "./Sign";
@@ -36,17 +36,17 @@ const imageVariants = {
 
 const bgVariants = {
   hidden: {
-    backgroundColor: "rgba(245, 245, 220, 0)",
+    backgroundColor: "rgba(var(--background), 0)",
   },
   visible: {
-    backgroundColor: "rgba(245, 245, 220, 0.4)",
+    backgroundColor: "rgba(var(--background), 0.4)",
     transition: {
       delay: 0.3,
       duration: 1,
     },
   },
   isHovered: {
-    backgroundColor: "rgba(245, 245, 220, 0.7)",
+    backgroundColor: "rgba(var(--background), 0.7)",
     transition: {
       duration: 1,
     },
@@ -75,8 +75,6 @@ const descVariants = {
 const AboutUs = ({ children, aboutUs }) => {
   const [isHovered, setIsHovered] = useState(false);
   const mobileOrTablet = useMediaQuery("(max-width:768px)");
-
-  console.log("This is mobile for who we are", mobileOrTablet);
 
   const mobileClickHandler = () => {
     if (mobileOrTablet) {

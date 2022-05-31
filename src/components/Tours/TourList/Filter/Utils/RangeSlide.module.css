@@ -5,7 +5,7 @@
 }
 
 .slider-range {
-  color: var(--main-beige-black);
+  color: rgb(var(--main-font-color));
 }
 
 .slider-range :global .MuiSlider-thumb {
@@ -15,14 +15,14 @@
 }
 
 .slider-range :global .MuiSlider-thumb:hover {
-  box-shadow: 0px 0px 20px 5px rgba(187, 146, 48, 0.56);
+  box-shadow: 0px 0px 20px 5px rgba(var(--main-highlighted), 0.56);
 }
 
 .slider-range :global .MuiSlider-thumb.Mui-active {
-  color: rgba(187, 146, 48, 0.56);
+  color: rgba(var(--main-highlighted), 0.56);
 }
 
 .slider-range :global .MuiSlider-thumb .MuiSlider-valueLabel {
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
 }
 

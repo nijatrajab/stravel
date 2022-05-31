@@ -2,7 +2,7 @@ import { RiFacebookLine, RiInstagramLine, RiTwitterLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import classes from "./TeamMember.module.css";
 import useHttpImage from "../../../hooks/use-http";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const teamCardVariants = {
   hidden: {

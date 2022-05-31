@@ -1,20 +1,35 @@
 .input {
-  background-color: var(--main-beige);
-  color: var(--main-beige-black);
+  background-color: rgb(var(--background));
+  color: rgb(var(--main-font-color));
   border-radius: 0;
   width: 100%;
+  transition: all 300ms;
 }
 
 .input:hover {
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
 }
 
 .input :global .MuiOutlinedInput-root {
   border-radius: 0;
+  border: 1px solid rgba(var(--main-font-color), 0.6);
+}
+
+.input:hover :global .MuiOutlinedInput-root {
+  border: 1px solid rgb(var(--main-font-color));
+}
+
+.input :global .Mui-focused.MuiOutlinedInput-root {
+  border: 1px solid rgb(var(--main-font-color));
 }
 
 .input :global .Mui-focused .MuiOutlinedInput-notchedOutline {
-  border: 1px solid var(--main-beige-black);
+  border: 0px;
+}
+
+
+.input :global .MuiOutlinedInput-input {
+  color: rgb(var(--main-font-color));
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {

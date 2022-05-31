@@ -1,5 +1,12 @@
-import { useContext, useEffect, useMemo } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, {
+  Suspense,
+  useCallback,
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+} from "react";
+import { LayoutGroup, motion, useAnimation } from "framer-motion";
 
 import Tour from "./Tour";
 import classes from "./TourList.module.css";
@@ -18,7 +25,7 @@ const tourListVariants = {
   },
   visible: (device) => {
     return {
-      flexBasis: device ? "72%" : "100",
+      flexBasis: device ? "72%" : "100%",
       transition: {
         duration: 0.3,
         delay: 0.1,
@@ -28,29 +35,33 @@ const tourListVariants = {
 };
 
 const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
-  const tourCtx = useContext(TourContext);
+  const { mainTours: tours } = useContext(TourContext);
+  const deferredTours = useDeferredValue(tours);
   const tourListAnimate = useAnimation();
 
-  console.log("Checking changing", tourCtx.isChanged);
-
   const tourList = useMemo(() => {
-    return tourCtx.mainTours.map((mainTour, idx) => (
+    return deferredTours.map((mainTour, idx) => (
       <Tour
         mainTour={mainTour}
         key={`Tour-${Math.random().toString()}-${idx}`}
       />
     ));
-  }, [tourCtx.mainTours]);
+  }, [deferredTours]);
 
   useEffect(() => {
-    filterState
-      ? tourListAnimate.start("visible")
-      : tourListAnimate.start("hidden");
+    if (filterState === "notDesktop") {
+    } else if (filterState) {
+      tourListAnimate.start("visible");
+    } else {
+      tourListAnimate.start("hidden");
+    }
   }, [filterState, tourListAnimate]);
 
   const filterStateHandler = () => {
-    filterStateFn((prevState) => !prevState)
-  }
+    filterStateFn((prevState) => !prevState);
+  };
+
+  console.log("Rendering tours");
 
   return (
     <motion.div
@@ -63,7 +74,7 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
       className={classes["tour-head"]}
     >
       <motion.div layout key="tourSort" className={classes["tour-sort"]}>
-        <motion.p>Total founded tours: {tourCtx.mainTours.length}</motion.p>
+        <motion.p>Total founded tours: {deferredTours.length}</motion.p>
         <div className={classes["tourlist-btns"]}>
           <SortingFilter />
           <StyledBtn
@@ -80,10 +91,12 @@ const TourList = ({ children, filterState, filterStateFn, isNotDesktop }) => {
         className={classes["tour-list"]}
         data-filteractive={filterState}
       >
-        {tourList}
+        <LayoutGroup id="tours">
+          <Suspense fallback="Loading tours...">{tourList}</Suspense>
+        </LayoutGroup>
       </motion.div>
     </motion.div>
   );
 };
 
-export default TourList;
+export default React.memo(TourList);

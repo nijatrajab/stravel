@@ -30,7 +30,12 @@ const TitleDetails = ({
           {days} day{`${+days > 0 ? "s" : ""}`}
         </p>
       </div>
-      <TourTypes discount={discount} special={special} discountPercent={discountPercent} type={type} />
+      <TourTypes
+        discount={discount}
+        special={special}
+        discountPercent={discountPercent}
+        type={type}
+      />
     </>
   );
 };

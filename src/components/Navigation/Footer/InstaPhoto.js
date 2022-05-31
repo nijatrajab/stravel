@@ -1,4 +1,4 @@
-import Card from "../../../UI/Card";
+import Card from "../../UI/Card";
 import classes from "./InstaPhoto.module.css";
 import { useEffect, useState } from "react";
 import useHttpImage from "../../../hooks/use-http";

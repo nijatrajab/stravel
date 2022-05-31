@@ -1,4 +1,4 @@
-import Button from "../../../UI/Button";
+import Button from "../../UI/Button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 

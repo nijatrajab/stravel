@@ -4,7 +4,7 @@ import classes from "./BlogDetail.module.css";
 import BlogButton from "./BlogButton";
 
 const blogDetailVariants = {
-  hidden: { opacity: 0,x: 50 },
+  hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
     x: 0,
@@ -37,7 +37,11 @@ const BlogDetail = ({ children, blogPost, blogState }) => {
       <div className={classes["blog-content"]}>
         <p className={classes["blog-title"]}>{blogPost.title}</p>
         <p className={classes["blog-desc"]}>{blogPost.content}</p>
-        <BlogButton className={classes["blog-more"]} blogState={blogState} btnType={"back"} />
+        <BlogButton
+          className={classes["blog-more"]}
+          blogState={blogState}
+          btnType={"back"}
+        />
       </div>
     </motion.div>
   );

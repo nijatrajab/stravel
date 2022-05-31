@@ -10,41 +10,45 @@
 }
 
 .select-control :global .MuiSelect-select:hover {
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
 }
 
 .select-control :global .MuiSelect-select {
   border-radius: 0;
-  background-color: var(--main-beige-black);
-  color: var(--main-beige) !important;
+  background-color: rgb(var(--main-font-color));
+  color: rgb(var(--background)) !important;
   transition: all 300ms;
 }
 
 .select-control :global .MuiSelect-select[aria-expanded="true"] {
-  background-color: var(--main-orange);
-  color: var(--main-beige) !important;
+  background-color: rgb(var(--main-highlighted));
+  color: rgb(var(--background)) !important;
 }
 
 :global .MuiPaper-elevation {
   border-radius: 0 !important;
 }
 
+:global .MuiMenuItem-root {
+  color: rgb(var(--main-font-color)) !important;
+}
+
 :global .MuiMenuItem-root.Mui-selected {
-  background-color: var(--main-beige-black) !important;
-  color: var(--main-beige) !important;
+  background-color: rgb(var(--main-font-color)) !important;
+  color: rgb(var(--background)) !important;
 }
 
 :global .MuiMenuItem-root:hover {
-  background-color: var(--main-beige-black) !important;
-  color: var(--main-beige) !important;
+  background-color: rgb(var(--main-font-color)) !important;
+  color: rgb(var(--background)) !important;
 }
 
 :global .MuiPaper-elevation {
-  background-color: var(--main-beige) !important;
+  background-color: rgb(var(--background)) !important;
 }
 
 .select-control :global .MuiSelect-icon {
-  color: var(--main-beige);
+  color: rgb(var(--background));
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
@@ -55,7 +59,7 @@
     font-size: 0.8rem !important;
   }
   .select-control :global .MuiSelect-icon {
-    color: var(--main-beige);
+    color: rgb(var(--background));
   }
 
   :global .MuiMenuItem-root {
@@ -67,7 +71,7 @@
   }
 
   :global .MuiPaper-elevation {
-    background-color: var(--main-beige) !important;
+    background-color: rgb(var(--background)) !important;
     left: 10px !important;
   }
 }

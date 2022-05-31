@@ -1,4 +1,4 @@
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 import classes from "./BackgroundSlide.module.css";
 import { forwardRef } from "react";
 import CardUtils from "./Utils/CardUtils";
@@ -6,6 +6,7 @@ import CardUtils from "./Utils/CardUtils";
 const BackgroundSlide = forwardRef(({children, data}, ref) => {
   const settings = {
     fade: true,
+    className: classes["background-slider"]
   };
   return (
     <SliderModel ref={ref} settings={settings}>

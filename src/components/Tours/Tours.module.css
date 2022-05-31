@@ -2,17 +2,18 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  background-color: var(--main-beige);
+  background-color: rgb(var(--background));
 }
 
 .tour-header {
   position: relative;
   height: 650px;
   overflow: hidden;
+  width: inherit;
 }
 
 .tour-holder {
-  background-color: var(--main-beige);
+  background-color: rgb(var(--background));
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {

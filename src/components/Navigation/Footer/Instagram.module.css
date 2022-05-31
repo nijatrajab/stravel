@@ -4,8 +4,8 @@
 
 .instagram-button {
   position: absolute;
-  color: var(--main-beige-black);
-  background-color: var(--main-beige);
+  color: rgb(var(--main-font-color));
+  background-color: rgb(var(--background));
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -15,8 +15,8 @@
 }
 
 .instagram-button:hover {
-  color: var(--main-beige);
-  background-color: var(--main-orange);
+  color: rgb(var(--inverse-font-color));
+  background-color: rgb(var(--main-highlighted));
 }
 
 .instagram-slider {

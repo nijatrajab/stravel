@@ -1,10 +1,5 @@
-.gallery-li {
-  height: 40vh;
-  flex-grow: 1;
-}
+.gallery-photo {
 
-.gallery-li:last-child {
-  flex-grow: 10;
 }
 
 .gallery-img {
@@ -13,7 +8,57 @@
   object-fit: cover;
   vertical-align: bottom;
   padding: 5px;
+  filter: grayscale(30%) sepia(0.3) blur(0px);
+  transition: all 300ms;
+  transition-delay: 100ms;
 }
+
+.overlay {
+  position: absolute;
+  background-clip: content-box;
+  cursor: pointer;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: background-color 300ms;
+  transition-delay: 100ms;
+}
+
+.eye-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(var(--main-font-color));
+  cursor: pointer;
+  opacity: 0.3;
+  z-index: 1;
+  transition: opacity 300ms;
+  transition-delay: 100ms;
+}
+
+.photo-detail-holder {
+  position: absolute;
+  bottom: 0;
+  color: rgb(var(--main-font-color));
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(var(--secondary-component-bg), 0.8);
+  background-clip: content-box;
+}
+
+.overlay:hover {
+  background-color: rgba(var(--secondary-component-bg), 0.7);
+}
+.overlay:hover + .eye-icon {
+  opacity: 1;
+}
+.overlay:hover ~ .gallery-img {
+  filter: grayscale(30%) sepia(0.3) blur(5px);
+}
+
 
 @media screen and (max-aspect-ratio: 1/1) and (max-width: 480px) {
   .gallery-img {

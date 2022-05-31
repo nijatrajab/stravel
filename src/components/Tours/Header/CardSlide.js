@@ -1,4 +1,4 @@
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 import classes from "./CardSlide.module.css";
 import CardUtils from "./Utils/CardUtils";
 

@@ -1,6 +1,7 @@
 .content-blog {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .content-blog-img {
@@ -11,12 +12,13 @@
 .content-blog-title {
   font-size: 2.5rem;
   font-family: var(--main-light-font);
+  color: rgb(var(--main-font-color))
 }
 
 .content-blog-tag {
   font-size: 3rem;
   font-family: "Updock";
-  color: var(--main-orange);
+  color: rgb(var(--main-highlighted));
 }
 
 .content-blog-img img {

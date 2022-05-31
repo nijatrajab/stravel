@@ -1,7 +1,7 @@
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import SliderArrowButton from "../../Utils/SliderArrow";
 import { headerSlide } from "../../../store/constant-images";
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 
 import classes from "./SpecialTours.module.css";
 import SpecialTour from "./SpeacialTour";
@@ -10,7 +10,7 @@ const SpecialTours = () => {
   const settings = {
     className: classes.slider5nav,
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     prevArrow: (
       <SliderArrowButton arrowClass={classes["content-card-prev-btn"]}>
         <MdNavigateBefore />
@@ -51,7 +51,7 @@ const SpecialTours = () => {
 
   return (
     <SliderModel settings={settings}>
-      {headerSlide.map((img) => (
+      {headerSlide.map((img, idx) => (
         <div key={Math.random()} className={classes["content-card-hold"]}>
           <SpecialTour
             image={img.image}
@@ -59,6 +59,7 @@ const SpecialTours = () => {
             price={img.price}
             days={img.days}
             star={img.star}
+            idx={idx}
           />
         </div>
       ))}

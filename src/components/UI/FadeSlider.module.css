@@ -361,7 +361,7 @@
   width: 175px;
   height: 50px;
   right: -13%;
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
 }
 .content-text-third {
   position: relative;

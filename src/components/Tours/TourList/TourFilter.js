@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import classes from "./TourFilter.module.css";
 import { VscChromeClose } from "react-icons/vsc";
 import StyledBtn from "../../Utils/StyledBtn";
+import React from "react";
 
 const filtersVariants = {
   exit: {
@@ -47,6 +48,7 @@ const filtersVariants = {
 };
 
 const TourFilter = ({ children, mediaQuery, onClose }) => {
+  console.log("Rendering filters")
   const filterComp = (
     <>
       <div className={classes["filter-buttons"]}>
@@ -54,7 +56,7 @@ const TourFilter = ({ children, mediaQuery, onClose }) => {
             <VscChromeClose />
           </StyledBtn>}
         <div className={classes["filter-action-buttons"]}>
-          <ClearFilter onClose={onClose} />
+          <ClearFilter onClose={onClose} mediaQuery={mediaQuery}/>
           {mediaQuery && <ApplyFilter mediaQuery={mediaQuery} onClose={onClose} />}
         </div>
       </div>
@@ -103,4 +105,4 @@ const TourFilter = ({ children, mediaQuery, onClose }) => {
 
   return filterHolder;
 };
-export default TourFilter;
+export default React.memo(TourFilter);

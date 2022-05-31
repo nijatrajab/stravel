@@ -7,7 +7,7 @@ import {
   RiTelegramLine,
   RiWhatsappLine,
 } from "react-icons/ri";
-import Card from "../../UI/Card";
+import Card from "../UI/Card";
 import classes from "./Footer.module.css";
 import Instagram from "./Footer/Instagram";
 

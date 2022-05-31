@@ -4,12 +4,13 @@ import Head from "./Header/Head";
 import Blogs from "./BlogPost/Blogs";
 import Special from "./Special/Special";
 import Services from "./Services/Services";
+import Testimonials from "./Testimonials/Testimonials";
+import Map from "./Map/Map";
+
+import ContentSection from "../UI/ContentSection";
+import Content from "../UI/Content";
 
 import classes from "./Home.module.css";
-import Testimonials from "./Testimonials/Testimonials";
-import ContentSection from "../../UI/ContentSection";
-import Map from "./Map/Map";
-import Content from "../../UI/Content";
 
 const Home = () => {
   console.log("Rendering");

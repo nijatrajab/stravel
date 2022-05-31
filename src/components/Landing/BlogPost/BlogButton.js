@@ -5,15 +5,14 @@ import { motion } from "framer-motion";
 const btnVariants = {
   hidden: {
     scale: 1,
-    color: ["var(--main-beige-black)"],
+    color: ["rgb(var(--main-font-color))"],
   },
   hover: (i) => {
     return {
-      color: [
-        "var(--main-orange)",
-        "var(--main-beige-black)",
-        "var(--main-orange)",
-        "var(--main-beige-black)"
+      scale: [
+        1.2,
+        1,
+        1.2
       ],
       cursor: "pointer",
       transition: {

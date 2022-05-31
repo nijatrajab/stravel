@@ -3,12 +3,12 @@ a {
 }
 
 .social-icons {
-  color: var(--main-beige-black);
+  color: rgb(var(--main-font-color));
   transition: all 300ms;
 }
 
 .social-icons:hover {
-  color: var(--main-orange);
+  color: rgb(var(--main-highlighted));
 }
 
 .team-card-image {
@@ -26,7 +26,7 @@ a {
 }
 
 .team-card-pos {
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
   color: var(--main-white);
   width: 100%;
   height: 0;
@@ -45,7 +45,8 @@ a {
 }
 
 .team-card-detail {
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
+  color: rgb(var(--main-font-color));
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -94,4 +95,35 @@ a {
 .team-card:hover .team-card-image,
 .team-card:active .team-card-image {
   height: 185px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+.team-card-pos{
+    height: 30px;
+  }
+  
+.team-card-detail {
+    height: 185px;
+  }
+  
+.team-card-image {
+    height: 185px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .team-card:hover .team-card-pos,
+  .team-card:active .team-card-pos {
+    height: 30px;
+  }
+  
+  .team-card:hover .team-card-detail,
+  .team-card:active .team-card-detail  {
+    height: 185px;
+  }
+  
+  .team-card:hover .team-card-image,
+  .team-card:active .team-card-image {
+    height: 185px;
+  }
 }

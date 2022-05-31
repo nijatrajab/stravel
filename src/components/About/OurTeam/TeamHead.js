@@ -48,7 +48,7 @@ const TeamHead = ({ children, ourTeam }) => {
           y1="10"
           x2="600"
           y2="10"
-          stroke="var(--main-beige-black)"
+          stroke="rgb(var(--main-font-color))"
           custom={1}
           variants={svgVariants}
         />
@@ -57,7 +57,7 @@ const TeamHead = ({ children, ourTeam }) => {
           y1="10"
           x2="0"
           y2="10"
-          stroke="var(--main-beige-black)"
+          stroke="rgb(var(--main-font-color))"
           custom={1}
           variants={svgVariants}
         />

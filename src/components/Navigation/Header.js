@@ -1,13 +1,15 @@
 import { useMediaQuery } from "@mui/material";
-import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import Content from "../../UI/Content";
+import Content from "../UI/Content";
 import StyledBtn from "../Utils/StyledBtn";
 import { CgDetailsMore } from "react-icons/cg";
 import classes from "./Header.module.css";
+import NavItem from "./NavItem";
+import ThemeChanger from "../Utils/ThemeChanger";
+import { LayoutGroup } from "framer-motion";
 
-const Header = ({children, onOpen}) => {
+const Header = ({ children, onOpen, navDetail }) => {
   // const [navbar, setNavbar] = useState(false);
 
   // const changeBackground = () => {
@@ -34,6 +36,7 @@ const Header = ({children, onOpen}) => {
             STravel
           </div>
         </Link>
+        <ThemeChanger />
         <nav style={{ margin: 0 }}>
           {mobileDevice ? (
             <StyledBtn className={classes["nav-btn"]} onEvent={onOpen}>
@@ -41,21 +44,18 @@ const Header = ({children, onOpen}) => {
             </StyledBtn>
           ) : (
             <ul>
-              <li>
-                <Link to="/">
-                  <p className={`${classes["nav-scroll"]}`}>Home</p>
-                </Link>
-              </li>
-              <li>
-                <Link to="/tours">
-                  <p className={`${classes["nav-scroll"]}`}>Tours</p>
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  <p className={`${classes["nav-scroll"]}`}>About us</p>
-                </Link>
-              </li>
+              <LayoutGroup id="navigation">
+                {navDetail.map((nav, idx) => {
+                  return (
+                    <NavItem
+                      key={`nav-${nav.navigate}`}
+                      label={nav.label}
+                      navigate={nav.navigate}
+                      idx={idx}
+                    />
+                  );
+                })}
+              </LayoutGroup>
             </ul>
           )}
         </nav>

@@ -9,12 +9,14 @@
 
 .team-title {
     font-size: 3rem;
+    color: rgb(var(--main-font-color))
 }
 
 .team-desc {
     font-size: 1.5rem;
     text-align: justify;
     text-align-last: center;
+    color: rgb(var(--main-font-color))
 }
 
 .svg-line {

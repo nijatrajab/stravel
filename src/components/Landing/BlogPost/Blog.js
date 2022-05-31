@@ -1,9 +1,9 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import classes from "./Blog.module.css";
 import BlogButton from "./BlogButton";
 
 const blogVariants = {
-  hidden: { opacity: 0,x: 50 },
+  hidden: { opacity: 0, x: 50 },
   visible: (i) => {
     return {
       opacity: 1,
@@ -46,7 +46,11 @@ const Blog = ({ blogId, idx, blogState, title, image, desc }) => {
       <div className={classes["blog-content"]}>
         <p className={classes["blog-title"]}>{title}</p>
         <p className={classes["blog-desc"]}>{desc}</p>
-        <BlogButton className={classes["blog-more"]} btnType="next" blogState={onClickHandler} />
+        <BlogButton
+          className={classes["blog-more"]}
+          btnType="next"
+          blogState={onClickHandler}
+        />
       </div>
     </motion.div>
   );

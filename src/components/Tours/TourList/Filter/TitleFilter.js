@@ -5,13 +5,11 @@ import InputField from "./Utils/Input";
 
 const validatingText = (text) => {
   if (
-    text.toString().trim().length === 0 ||
-    text === null ||
-    text === undefined
+    text.toString().trim().length === 0
   ) {
-    return false;
-  } else {
     return text.toString().trim();
+  } else {
+    return text.toString();
   }
 };
 
@@ -19,9 +17,9 @@ const TitleFilter = ({ children, mediaQuery }) => {
   const tourCtx = useContext(TourContext);
 
   const onTitleChange = (event) => {
-    if (validatingText(event.target.value)) {
+
       tourCtx.titleFilter(validatingText(event.target.value), mediaQuery);
-    }
+    
   };
 
   return (

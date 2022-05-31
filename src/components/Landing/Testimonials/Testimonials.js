@@ -1,5 +1,5 @@
 import { testimonials } from "../../../store/constant-images";
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 import Testimonial from "./Testimonial";
 
 import classes from "./Testimonials.module.css";

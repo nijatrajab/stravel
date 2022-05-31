@@ -1,0 +1,14 @@
+.photo-detail {
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* color: rgb(var(--main-font-color)); */
+    /* font-size: 1rem; */
+    width: 100%;
+    padding: 10px;
+    /* background-color: rgba(var(--secondary-component-bg), 0.8); */
+    background-clip: content-box;
+}
+
+.photo-detail p {
+    margin-block: 0.5rem;
+}

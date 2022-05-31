@@ -4,34 +4,38 @@
   justify-content: center;
   align-items: center;
   width: 300px;
-  flex: 1
+  flex: 1;
 }
 
 .service-image-holder {
   width: 150px;
   height: 150px;
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.service-image-holder img {
+.service-image-holder svg {
   width: 100px;
   height: 100px;
+  fill: rgb(var(--main-font-color))
 }
+
 
 .service-title {
   margin-top: 3%;
   font-size: 1.5rem;
   text-transform: uppercase;
+  color: rgb(var(--main-font-color))
 }
 
 .service-description {
   margin-top: 1%;
   line-height: 1.5rem;
   text-align: center;
+  color: rgb(var(--secondary-font-color))
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {

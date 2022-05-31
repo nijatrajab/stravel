@@ -44,9 +44,11 @@ const RangeSlider = ({
     tourCtxMaxFn(event.target.value, mediaQuery);
   };
 
-  const onAfterChange = (value) => {};
-
-  console.log([tourCtxMin, tourCtxMax]);
+  // const onAfterChange = input => event => {
+  //   tourCtxMinFn(event.target.value[0], mediaQuery);
+  //   tourCtxMaxFn(event.target.value[1], mediaQuery);
+  //   // console.log(event.target.value)
+  // };
 
   return (
     <div className={sliderClass}>
@@ -59,6 +61,7 @@ const RangeSlider = ({
         min={tourCtxMinDef}
         max={tourCtxMaxDef}
         className={classes["slider-range"]}
+        // onChangeCommitted={(event, value) => onAfterChange("areaSpace")({target: {value}})}
       />
       <div className={classes["slider-input"]}>
         <InputField

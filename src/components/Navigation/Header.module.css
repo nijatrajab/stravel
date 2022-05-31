@@ -7,7 +7,7 @@
   height: 5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   z-index: 100;
-  background-color: var(--main-beige);
+  background-color: rgb(var(--background));
 }
 
 .header-scroll {
@@ -30,11 +30,11 @@
 }
 
 .logo-scroll {
-  color: var(--main-beige-black);
+  color: rgb(var(--main-font-color));
 }
 
 .logo-scroll:hover {
-  color: var(--main-orange);
+  color: rgb(var(--main-highlighted));
 }
 
 .header ul {
@@ -42,7 +42,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .header li {
@@ -52,11 +52,11 @@
 }
 
 .nav-scroll {
-  color: var(--main-beige-black);
+  color: rgb(var(--main-font-color));
 }
 
 .nav-scroll:hover {
-  color: var(--main-orange);
+  color: rgb(var(--main-highlighted));
 }
 
 .header a {

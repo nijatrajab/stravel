@@ -37,3 +37,29 @@
   }
 }
 
+
+
+:root {
+  /* main colors */
+  --main-black: rgb(0, 0, 0);
+  --main-beige-black: rgb(31, 30, 30);
+  --main-light-black: rgb(122, 122, 122);
+  --main-white: rgb(255, 255, 255);
+  --main-beige: rgb(245, 245, 220);
+  --main-dark-beige: rgb(235, 235, 195);
+  --main-orange: rgb(187, 146, 48);
+
+  --main-bg-color: rgb(243, 245, 246);
+  --main-dark-blue: rgb(20, 34, 46);
+  --main-blue: rgb(51, 50, 50);
+  --main-light-blue: rgb(174, 189, 199);
+  --main-white: rgb(255, 255, 255);
+
+  --main-light-orange: rgb(253, 130, 108);
+  --main-grey: rgb(158, 158, 158);
+
+  /* main fonts */
+  --main-font: "WorkSans";
+  --main-light-font: "WorkSans-light";
+  --main-design-font: "Truclenta";
+}

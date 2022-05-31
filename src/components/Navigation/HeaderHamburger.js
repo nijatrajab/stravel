@@ -1,22 +1,24 @@
-import { Link } from "react-router-dom";
+import NavItem from "./NavItem";
 
 import classes from "./HeaderHamburger.module.css";
 
-const HeaderHamburger = ({children, onClose}) => {
+const HeaderHamburger = ({ children, onClose, navDetail, mobileDevice }) => {
   return (
-    <div className={classes["header-hamburger"]}>
-      <Link to="/">
-        <p className={`${classes["nav-hamburger"]}`} onClick={onClose}>Home</p>
-      </Link>
-
-      <Link to="/tours">
-        <p className={`${classes["nav-hamburger"]}`} onClick={onClose}>Tours</p>
-      </Link>
-
-      <Link to="/about">
-        <p className={`${classes["nav-hamburger"]}`} onClick={onClose}>About us</p>
-      </Link>
-    </div>
+    <ul className={classes["header-hamburger"]}>
+      {navDetail.map((nav, idx) => {
+        return (
+          <NavItem
+            key={`mobile-nav-${nav.navigate}-${idx}`}
+            label={nav.label}
+            navigate={nav.navigate}
+            navClass={classes["nav-hamburger"]}
+            onClose={onClose}
+            idx={idx}
+            mobileDevice={mobileDevice}
+          />
+        );
+      })}
+    </ul>
   );
 };
 

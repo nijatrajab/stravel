@@ -1,4 +1,4 @@
-import Button from "../../UI/Button";
+import Button from "../UI/Button";
 
 import classes from "./StyledBtn.module.css"
 

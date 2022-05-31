@@ -1,25 +1,27 @@
-import Photo from "./PhotoHolder";
-import { gallery } from "../../../store/constant-images";
-
-import classes from "./Gallery.module.css";
+import { useContext } from "react";
+import GalleryContext from "../../../store/gallery/gallery-context";
+import Photos from "./Photos";
+import PhotoModal from "./PhotoModal";
 
 const Gallery = () => {
+  const galleryCtx = useContext(GalleryContext);
+
+  console.log("RENDERING GALLERY");
   return (
-    <ul className={classes["gallery-ul"]}>
-      {gallery.map((photo, idx) => {
-        console.log(photo._id);
-        return (
-          <Photo
-            key={`gallery-${photo._id}`}
-            photo={photo.imageLink}
-            text={photo.imageText}
-            idx={idx}
-            liClass={classes["gallery-li"]}
-          />
-        );
-      })}
-      <li className={classes["gallery-li"]}></li>
-    </ul>
+    <>
+      <PhotoModal 
+        isActive={galleryCtx.isActive}
+        closeFn={galleryCtx.closePhoto}
+        nextFn={galleryCtx.nextPhoto}
+        prevFn={galleryCtx.prevPhoto}
+        zoomInFn={galleryCtx.zoomIn}
+        zoomOutFn={galleryCtx.zoomOut}
+        resetFn={galleryCtx.resetSize}
+        photo={galleryCtx.activePhoto}
+        photoHW={galleryCtx.photoHW}
+      />
+      <Photos photoList={galleryCtx.gallery} photoFn={galleryCtx.setActivePhoto} />
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useMediaQuery } from "@mui/material";
 import { useState, useRef, Fragment, useEffect } from "react";
 import { mainTours } from "../../../store/constant-images";
-import Content from "../../../UI/Content";
+import Content from "../../UI/Content";
 import BackgroundSlide from "./BackgroundSlide";
 import CardSlide from "./CardSlide";
 import DescriptionSlide from "./DescriptionSlide";
@@ -16,11 +16,11 @@ const HeaderSlide = () => {
     "(max-width: 1024px)"
   );
 
-  console.log("movile rendering cycle")
-
   const filteredTours = mainTours.filter((mainTour) => {
-    return mainTour.special === true && mainTour.discount === true;
+    return mainTour.special === true || mainTour.discount === true;
   });
+
+  console.log(filteredTours, "specials")
 
   const sliderRef1 = useRef();
   const sliderRef3 = useRef();

@@ -13,7 +13,7 @@
 }
 
 .grid1-imgHolder {
-  background-color: var(--main-beige-black);
+  background-color: rgb(var(--main-font-color));
   /* max-width: 320px;
   max-height: 640px; */
 }
@@ -28,7 +28,7 @@
 .grid2-imgHolder {
   /* max-width: 640px;
   max-height: 640px; */
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
 }
 
 .grid3-img {
@@ -41,7 +41,7 @@
 .grid3-imgHolder {
   /* max-width: 320px;
   max-height: 320px; */
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
 }
 
 .grid4-img {
@@ -53,7 +53,7 @@
 .grid4-imgHolder {
   /* max-width: 640px;
   max-height: 320px; */
-  /* background-color: var(--main-dark-beige); */
+  /* background-color: rgb(var(--main-component-bg)); */
 }
 .grid5-img {
   width: 100%;
@@ -64,7 +64,7 @@
 .grid5-imgHolder {
   /* max-width: 640px;
   max-height: 320px; */
-  /* background-color: var(--main-dark-beige); */
+  /* background-color: rgb(var(--main-component-bg)); */
 }
 
 .grid6-img {
@@ -77,5 +77,5 @@
 .grid6-imgHolder {
   /* max-width: 320px;
   max-height: 320px; */
-  background-color: var(--main-dark-beige);
+  background-color: rgb(var(--main-component-bg));
 }

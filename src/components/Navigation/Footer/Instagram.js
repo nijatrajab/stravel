@@ -1,5 +1,5 @@
 import { gallery } from "../../../store/constant-images";
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 
 import classes from "./Instagram.module.css";
 import InstaPhoto from "./InstaPhoto";
@@ -18,32 +18,31 @@ const Instagram = () => {
         breakpoint: 1601,
         settings: {
           slidesToShow: 8,
-        }
+        },
       },
       {
         breakpoint: 1025,
         settings: {
           slidesToShow: 6,
-        }
+        },
       },
       {
         breakpoint: 769,
         settings: {
           slidesToShow: 4,
-        }
+        },
       },
       {
         breakpoint: 481,
         settings: {
           slidesToShow: 2,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
   return (
     <div className={classes["instagram"]}>
-
       <SliderModel settings={settings}>
         {gallery.map((img) => (
           <div
@@ -54,7 +53,11 @@ const Instagram = () => {
           </div>
         ))}
       </SliderModel>
-      <a href="https://instagram.com/random" target="_black" className={classes["instagram-button"]}>
+      <a
+        href="https://instagram.com/random"
+        target="_black"
+        className={classes["instagram-button"]}
+      >
         INSTAGRAM
       </a>
     </div>

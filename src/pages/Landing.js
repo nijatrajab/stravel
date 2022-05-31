@@ -1,8 +1,11 @@
 import Home from "../components/Landing/Home";
+import AnimatedPage from "./AnimatedPage";
 
 const Landing = () => {
   return (
-    <Home />
+    <AnimatedPage>
+      <Home />
+    </AnimatedPage>
   );
 };
 

@@ -17,14 +17,13 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  font-size: 40px;
-  bottom: 50%;
+  top: 45%;
 }
 
 .content-card-prev-btn,
 .content-card-next-btn  {
-  color: var(--main-beige);
-  background-color: var(--main-beige-black);
+  color: rgb(var(--background));
+  background-color: rgb(var(--main-font-color));
   transition: background-color 300ms;
 }
 
@@ -37,14 +36,9 @@
 }
 
 .content-card-prev-btn:hover {
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
 }
 
 .content-card-next-btn:hover {
-  background-color: var(--main-orange);
-}
-
-.content-card-prev-btn:active,
-.content-card-next-btn:active {
-  transform: scale(0.97);
+  background-color: rgb(var(--main-highlighted));
 }

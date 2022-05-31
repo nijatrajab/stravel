@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import SliderModel from "../../../UI/SliderModel";
+import SliderModel from "../../UI/SliderModel";
 import TextSlider from "./Utils/TextUtils";
 
 import classes from "./TitleSlide.module.css";

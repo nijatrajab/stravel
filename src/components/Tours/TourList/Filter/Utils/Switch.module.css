@@ -9,11 +9,11 @@
   margin-inline: 0;
   padding-inline: 0;
   margin-block: auto;
-  color: var(--main-light-black);
+  color: rgba(var(--secondary-font-color), 0.8);
 }
 
 .switch-text[data-switch="true"] {
-  color: var(--main-beige-black);
+  color: rgb(var(--main-font-color));
 }
 
 .switch-input {
@@ -23,7 +23,7 @@
 }
 
 .switch-input :global .MuiSwitch-thumb {
-  background-color: var(--main-light-black);
+  background-color: rgba(var(--secondary-font-color), 0.8);
   border-radius: 0;
   width: 15px;
   height: 15px;
@@ -47,8 +47,8 @@
   transition: all 300ms;
 }
 .switch-input :global .Mui-checked .MuiSwitch-thumb {
-    transform: translate(4px, 2px);
-  background-color: var(--main-beige-black);
+  transform: translate(4px, 2px);
+  background-color: rgb(var(--main-font-color));
   transition: all 300ms;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .switch-input :global .MuiSwitch-track {
-  background-color: var(--main-light-black);
+  background-color: rgba(var(--secondary-font-color), 0.8);
   opacity: 1;
   border-radius: 0;
   height: 4px;
@@ -66,7 +66,7 @@
 }
 
 .switch-input :global .Mui-checked + .MuiSwitch-track {
-  background-color: var(--main-beige-black);
+  background-color: rgb(var(--main-font-color));
   opacity: 1;
 }
 

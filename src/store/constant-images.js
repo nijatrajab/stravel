@@ -13,10 +13,10 @@ import umbrella from "../assets/images/places/umbrella.webp";
 import tent from "../assets/images/places/tent.webp";
 import canoe from "../assets/images/places/canoe.webp";
 
-import price from "../assets/images/services/price.png";
-import discount from "../assets/images/services/discount5.png";
-import service from "../assets/images/services/service1.png";
-import special from "../assets/images/services/special2.png";
+import Price from "../components/Landing/Services/ServiceIcons/PriceIcon";
+import Discount from "../components/Landing/Services/ServiceIcons/DiscountIcon";
+import Service from "../components/Landing/Services/ServiceIcons/ServiceIcon";
+import Special from "../components/Landing/Services/ServiceIcons/SpecialIcon";
 
 import grid1 from "../assets/images/aboutHead/grid1.webp";
 import grid2 from "../assets/images/aboutHead/grid2.jpg";
@@ -168,22 +168,22 @@ export const servicesImages = [
   {
     title: "Affordable price",
     desc: "Lorem ipsum dolor sit amet, his convenire similique efficiendi et.",
-    image: price,
+    image: <Price />,
   },
   {
     title: "Discounts",
     desc: "Lorem ipsum dolor sit amet, his convenire similique efficiendi et.",
-    image: discount,
+    image: <Discount />,
   },
   {
     title: "Multiple services",
     desc: "Lorem ipsum dolor sit amet, his convenire similique efficiendi et.",
-    image: service,
+    image: <Service />,
   },
   {
     title: "Special tours",
     desc: "Lorem ipsum dolor sit amet, his convenire similique efficiendi et.",
-    image: special,
+    image: <Special />,
   },
 ];
 
@@ -426,7 +426,7 @@ export const mainTours = [
     4,
     "not_guided",
     30,
-    "05/10/2022",
+    "05/30/2022",
     true,
     "05/15/2022"
   ),
@@ -500,7 +500,7 @@ export const mainTours = [
     4,
     "not_guided",
     30,
-    "05/25/2022",
+    "05/29/2022",
     true,
     "05/25/2022"
   ),
@@ -530,7 +530,7 @@ export const mainTours = [
     5,
     "not_guided",
     35,
-    "05/01/2022",
+    "06/15/2022",
     false
   ),
   new Tour(

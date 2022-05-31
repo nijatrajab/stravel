@@ -12,11 +12,12 @@
   margin-block: 1rem 0;
   font-size: 7rem;
   z-index: 1;
+  color: rgb(var(--main-font-color))
 }
 
 .desc-text {
   font-size: 1.5rem;
-  color: rgb(161, 161, 161);
+  color: rgb(var(--secondary-font-color));
   margin: 0;
   z-index: 1;
 }
@@ -30,19 +31,20 @@
   padding: 17.5px 20px;
   margin-inline: 1rem;
   font-size: 1rem;
-  background-color: var(--main-black);
-  color: var(--main-white);
+  background-color: rgb(var(--inverse-component-bg));
+  color: rgb(var(--inverse-font-color));
   transition: all 300ms;
 }
 
 .btns:hover {
-  background-color: var(--main-orange);
+  background-color: rgb(var(--main-highlighted));
 }
 
 .places {
   position: absolute;
   width: 300px;
   filter: grayscale(100%) sepia(1);
+  pointer-events: none;
 }
 
 .places-0 {
@@ -123,7 +125,7 @@
     right: 65%;
   }
   .places-1 {
-    top: 15%;
+    top: 10%;
     right: 20%;
     scale: 0.7;
   }
@@ -144,7 +146,7 @@
     right: 18%;
   }
   .places-6 {
-    top: 32%;
+    top: 28%;
     right: 67%;
   }
   .places-7 {

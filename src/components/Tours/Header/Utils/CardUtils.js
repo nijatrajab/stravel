@@ -1,5 +1,5 @@
 import CardInside from "./CardInsideUtils";
-import Card from "../../../../UI/Card";
+import Card from "../../../UI/Card";
 
 const CardUtils = ({img, clsName, navIdx}) => {
   const mainCard = (navIdx !== null && navIdx !== undefined) ? (

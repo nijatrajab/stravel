@@ -1,0 +1,23 @@
+.theme-button {
+  color: rgb(var(--main-font-color));
+  transition: all 300ms;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+}
+
+.theme-button:hover {
+  color: rgb(var(--main-highlighted));
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .theme-button {
+    right: 20%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .theme-button {
+    right: 15%;
+  }
+}
